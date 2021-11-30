@@ -21,14 +21,14 @@ const SearchPage = (props) => {
     }
 
     return(
-    <LandingSearc >
+    <LandingSearch >
         <form>
-            <Searc>
-                <input value={search} onChange={handleChange} name="search" type="text" className="form-control" placeholder='Where will you work today?'/>
+            <Search>
+                <input value={search} onChange={handleChange} name="search" type="text" className="form-control" placeholder='Find todays office'/>
                 <button onClick={handleSubmit}>Submit</button>
-            </Searc>
+            </Search>
         </form>
-    </LandingSearc>
+    </LandingSearch>
     );
 }
 
@@ -41,35 +41,42 @@ const mapStateToProps = (state) =>{
 
 export default connect(mapStateToProps)(SearchPage);
 
-const LandingSearc=styled.div`
+const LandingSearch=styled.div`
     display:flex;
     width:100%;
     justify-content:center;
     flex-wrap:wrap;
     height:100vh;
 
+    
     input{
-        width:300px;
+        width:200px;
         border-radius:30px;
         display:flex;
         justify-content:center;
         text-align:center;
         border:none;
+        font-size:1.2rem;
     }
+    
 `
-const Searc=styled.div`
+const Search=styled.div`
     display:flex;
-    justify-content:center;
+    width:300px;
+    justify-content:space-between;
+    align-items:center;
     flex-wrap:wrap;
     border:1px solid black;
     border-radius:30px;
-    height:20px;
+    height:30px;
+    background-color:white;
     button{
         border-radius:30px;
         width:80px;
-        background-color:red;
+        background-color:teal;
         border:none;
         color:white;
-        height:20px;
+        height:100%;
+    }
     }
 `

@@ -1,3 +1,6 @@
+*{
+  box-sizing:border-box;
+}
 main {
   align-content: center;
   box-sizing: border-box;
@@ -22,14 +25,10 @@ p {
   font-size: 16px;
 }
 a {
-  border-bottom: 1px solid white;
-  color: #0076ff;
-  cursor: pointer;
-  text-decoration: none;
+ 
   transition: all 0.2s ease;
 }
 a:hover {
-  border-bottom: 1px solid #0076ff;
 }
 code,
 pre {

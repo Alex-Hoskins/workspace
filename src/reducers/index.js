@@ -1,7 +1,8 @@
-import { SET_SPACES } from '../actions/index';
+import { SET_SPACES, LOG_IN, LOG_OUT } from '../actions/index';
 
 const initialState = {
     spaces: [],
+    loggedIn: false
 }
 
 
@@ -11,6 +12,16 @@ const reducer = (state = initialState, action) => {
             return {
                 ...state,
                 spaces: []
+            }
+        case LOG_IN:
+            return {
+                ...state,
+                loggedIn: true
+            }
+        case LOG_OUT:
+            return {
+                ...state,
+                loggedIn: false
             }
         default:
             return state;
