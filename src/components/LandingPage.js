@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import styled from 'styled-components';
 import { useNavigate } from 'react-router-dom';
+
 const LandingPage = (props) => {
     const [search, setSearch]=useState('');
     const navigate = useNavigate();
@@ -20,6 +21,7 @@ const LandingPage = (props) => {
     }
 
     return(
+    <div>
     <LandingSearch >
         <form>
             <h2>Where will you work today?</h2>
@@ -29,6 +31,7 @@ const LandingPage = (props) => {
             </Search>
         </form>
     </LandingSearch>
+    </div>
     );
 }
 
@@ -50,6 +53,7 @@ const LandingSearch=styled.div`
     height:100vh;
     padding-top:5px;
     margin-top:0px;
+    min-height:100vh;
     form{
         display:flex;
         flex-direction:column;

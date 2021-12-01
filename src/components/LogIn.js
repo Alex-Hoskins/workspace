@@ -3,29 +3,22 @@ import React, { useState } from "react";
 import { connect } from 'react-redux';
 import { logIn } from "../actions";
 import { useNavigate } from "react-router-dom";
+import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 
 const LogIn = (props) =>{
     const navigate = useNavigate();
-    const [user,setUser] = useState({
-             username: '',
-             password: ''
-        })
-    
-
-    const handleUsernameChange = (event) => {
+    const [user, setUser] = useState({
+        username:"",
+        password:""
+    });
+    const handleChanges = event => {
         setUser({
             ...user,
-            username: event.target.value
-        })
-    }
-    
-    const handlePasswordChange = (event) => {
-        setUser({
-            ...user,
-            password: event.target.value 
-        })
-    }
+            [event.target.name]: event.target.value
+        });
+    };
 
     const handleSubmit = event =>{
         event.preventDefault();
@@ -34,34 +27,35 @@ const LogIn = (props) =>{
     }
    
     return (
-
-        <div className='market'>
-            <form onSubmit={handleSubmit}>
-                <h3>Login</h3>
-
-                <div className="form-group">
-                    <label>Username</label>
-                    <input 
-                        type="username" 
-                        value={user.username}
-                        onChange={handleUsernameChange}
-                        className="form-control" 
-                        placeholder="Enter username" 
-                        />
-                </div>
-
-                <div className="form-group">
-                    <label>Password</label>
-                    <input 
-                    type="password" 
-                    value={user.password}
-                    onChange={handlePasswordChange}
-                    className="form-control" 
-                    placeholder="Enter password" />
-                </div>
-                <button type="submit">Submit</button>
-            </form>
-        </div>
+        <PageContainer>
+            <StyledFormContainer>
+                <PageShadow>
+                    <StyledForm onSubmit={handleSubmit}>
+                        <h3>Login or <Link to="/signup">Signup</Link></h3>
+                        <StyledInputContainer>
+                            <label>Username</label>
+                            <input 
+                                name='username'
+                                type="text" 
+                                value={user.username}
+                                onChange={handleChanges}
+                                placeholder="Enter username" 
+                                />
+                        </StyledInputContainer>
+                        <StyledInputContainer>
+                            <label>Password</label>
+                            <input 
+                            name='password'
+                            type="text" 
+                            value={user.password}
+                            onChange={handleChanges}
+                            placeholder="Enter password" />
+                        </StyledInputContainer>
+                        <button type="submit">Submit</button>
+                    </StyledForm>
+                </PageShadow>   
+            </StyledFormContainer>
+        </PageContainer>
         )
 }
 
@@ -75,3 +69,81 @@ const mapStateToProps = (state) =>{
 }
 
 export default connect(mapStateToProps)(LogIn);
+
+const PageContainer = styled.div`
+    display:flex;
+    align-items:flex-start;
+    justify-content:center;
+    min-height:100vh;
+    margin-top:0px;
+    padding-top:5px;
+    box-sizing:border-box;
+
+`
+
+const StyledFormContainer = styled.div`
+     display:flex;
+    align-items:center;
+    justify-content:center;
+    background-image:url('https://images.unsplash.com/photo-1596079890744-c1a0462d0975?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1471&q=80');
+    object-fit:cover;
+    width:90%;
+    height:90%;
+    border-radius:30px;
+    margin:0px;
+    box-sizing:border-box;  
+    min-height:90vh; 
+`
+const PageShadow = styled.div`
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background-color:#00000036;
+    object-fit:cover;
+    width:100vmax;
+    height:100vh;
+    border-radius:30px;
+    margin:0px;
+    box-sizing:border-box;  
+    min-height:90vh;     
+`
+
+const StyledForm = styled.form`
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    width:380px;
+    border-radius:10px;
+    background-color:white;
+    input{
+        width:300px;
+        height:30px;
+        font-size:1.2rem;
+        border-radius:7px;
+    }
+    button{
+        width:300px;
+        background-color:teal;
+        border-radius:7px;
+        font-size:1.2rem;
+        height:30px;
+        color:white;
+        margin:20px;
+    }
+    label{
+        font-size:.8rem;
+        color:grey;
+    }
+    h2{
+        text-align:center;
+        font-size:1.4rem;
+        margin-top:20px;
+        margin-bottom:5px;
+    }
+`
+const StyledInputContainer=styled.div`
+    display:flex;
+    flex-direction:column;
+    margin:5px;
+`

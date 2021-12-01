@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
+
 
 const CreateAccount = (props) => {
     const [user, setUser] = useState({
@@ -25,63 +27,102 @@ const CreateAccount = (props) => {
     }
 
     return (
-        
-            <StyledForm onSubmit={submitForm}>
-                    <h2>Create Account</h2>         
-                    <StyledInputContainer>
-                        <label>First Name </label>
-                        <input
-                            type="text"
-                            name="firstname"
-                            placeholder="Enter first name"
-                            onChange={handleChanges}
-                            value={user.firstname} />
-                    </StyledInputContainer>
-                    <StyledInputContainer>
-                        <label>Last Name </label>
-                        <input
-                            type="text"
-                            name="lastname"
-                            placeholder="Enter last name"
-                            onChange={handleChanges}
-                            value={user.lastname} />
-                    </StyledInputContainer>    
-                    <StyledInputContainer>
-                        <label>Email</label>
-                        <input
-                            type="text"
-                            name="email"
-                            placeholder="Enter your email"
-                            onChange={handleChanges}
-                            value={user.email} />
-                    </StyledInputContainer>    
-                    <StyledInputContainer>
-                        <label>Username</label>
-                        <input
-                            type="text"
-                            name="username"
-                            placeholder="Enter a username"
-                            onChange={handleChanges}
-                            value={user.username} />
-                    </StyledInputContainer>
-                    <StyledInputContainer>
-                        <label>Password</label>
-                        <input
-                            type="password"
-                            name="password"
-                            placeholder="Enter a password"
-                            onChange={handleChanges}
-                            value={user.password} />
-                    </StyledInputContainer>  
-                    <button>Create Account</button>
-            </StyledForm>
+        <PageContainer>
+            <StyledFormContainer>
+                <PageShadow>
+                <StyledForm onSubmit={submitForm}>
+                        <h2>Create Account or <Link to="/login">Login</Link></h2>         
+                        <StyledInputContainer>
+                            <label>First Name </label>
+                            <input
+                                type="text"
+                                name="firstname"
+                                placeholder="Enter first name"
+                                onChange={handleChanges}
+                                value={user.firstname} />
+                        </StyledInputContainer>
+                        <StyledInputContainer>
+                            <label>Last Name </label>
+                            <input
+                                type="text"
+                                name="lastname"
+                                placeholder="Enter last name"
+                                onChange={handleChanges}
+                                value={user.lastname} />
+                        </StyledInputContainer>    
+                        <StyledInputContainer>
+                            <label>Email</label>
+                            <input
+                                type="text"
+                                name="email"
+                                placeholder="Enter your email"
+                                onChange={handleChanges}
+                                value={user.email} />
+                        </StyledInputContainer>    
+                        <StyledInputContainer>
+                            <label>Username</label>
+                            <input
+                                type="text"
+                                name="username"
+                                placeholder="Enter a username"
+                                onChange={handleChanges}
+                                value={user.username} />
+                        </StyledInputContainer>
+                        <StyledInputContainer>
+                            <label>Password</label>
+                            <input
+                                type="password"
+                                name="password"
+                                placeholder="Enter a password"
+                                onChange={handleChanges}
+                                value={user.password} />
+                        </StyledInputContainer>  
+                        <button>Create Account</button>
+                </StyledForm>
+                </PageShadow>
+            </StyledFormContainer>
+        </PageContainer>
         
     )
     }
 export default CreateAccount;
 
-const StyledFormContainer = styled.div`
+const PageContainer = styled.div`
+    display:flex;
+    align-items:flex-start;
+    justify-content:center;
+    min-height:100vh;
+    margin-top:0px;
+    padding-top:5px;
+    box-sizing:border-box;
 
+`
+
+const StyledFormContainer = styled.div`
+     display:flex;
+    align-items:center;
+    justify-content:center;
+    background-image:url('https://images.unsplash.com/photo-1596079890744-c1a0462d0975?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1471&q=80');
+    object-fit:cover;
+    width:90%;
+    height:90%;
+    border-radius:30px;
+    margin:0px;
+    box-sizing:border-box;  
+    min-height:90vh; 
+`
+const PageShadow = styled.div`
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background-color:#00000036;
+    object-fit:cover;
+    width:100vmax;
+    height:100vh;
+    border-radius:30px;
+    margin:0px;
+    box-sizing:border-box;  
+    min-height:90vh;     
 `
 
 const StyledForm = styled.form`
@@ -90,9 +131,8 @@ const StyledForm = styled.form`
     justify-content:center;
     align-items:center;
     width:380px;
-    border:1px solid black;
     border-radius:10px;
-    z-index:1;
+    background-color:white;
     input{
         width:300px;
         height:30px;
