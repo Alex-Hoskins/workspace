@@ -89,13 +89,15 @@ export default CreateAccount;
 
 const PageContainer = styled.div`
     display:flex;
-    align-items:flex-start;
+    width:100%;
     justify-content:center;
-    min-height:100vh;
-    margin-top:0px;
+    align-items:flex-start;
+    flex-wrap:wrap;
+    height:100vh;
     padding-top:5px;
+    margin-top:0px;
+    min-height:100vh;
     box-sizing:border-box;
-
 `
 
 const StyledFormContainer = styled.div`
@@ -108,21 +110,21 @@ const StyledFormContainer = styled.div`
     height:90%;
     border-radius:30px;
     margin:0px;
-    box-sizing:border-box;  
     min-height:90vh; 
+    box-sizing:border-box;
+
 `
 const PageShadow = styled.div`
     display:flex;
     align-items:center;
     justify-content:center;
     background-color:#00000036;
-    object-fit:cover;
-    width:100vmax;
-    height:100vh;
+    width:100%;
+    height:100%;
     border-radius:30px;
     margin:0px;
+    padding:0px;
     box-sizing:border-box;  
-    min-height:90vh;     
 `
 
 const StyledForm = styled.form`

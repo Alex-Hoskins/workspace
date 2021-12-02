@@ -44,7 +44,7 @@ const HeaderStyle = styled.div`
     height:10%;
     margin:0px;
     padding:0px;
-
+    box-sizing:border-box;
     h1{
         background-color:white;
         width:300px;
