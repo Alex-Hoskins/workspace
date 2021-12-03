@@ -12,7 +12,7 @@ import SignUp from './components/SignUp';
 
 function App() {
   return (
-   <div>
+   <div className='app'>
      <Header/>
      <Routes>
         <Route exact path="/" element={<LandingPage/>}/>

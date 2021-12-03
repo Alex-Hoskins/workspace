@@ -27,15 +27,6 @@ const mapStateToProps = (state) =>{
 
 export default connect(mapStateToProps)(Header);
 
-const SpanStyled = styled.span`
-    background-color:teal;
-    border-radius:30px;
-    color:white;
-    padding:4px 18px 4px 18px;
-    &:hover{
-        text-decoration-color:white;
-    }
-`
 const HeaderStyle = styled.div`
     display:flex;
     align-items: center;
@@ -85,10 +76,9 @@ const NavStyle = styled.ul`
         a {
             text-decoration: none;
             color: black;
-            font-size: 1.4em;
+            font-size: 1.3em;
             &:hover{
             font-weight:bold;
-            text-decoration:underline;
             text-decoration-color:teal;
             }
         }
@@ -98,6 +88,12 @@ const NavStyle = styled.ul`
             display:flex;
             align-items:center;
             justify-content:center;
-            
         }
+`
+const SpanStyled = styled.span`
+    background-color:teal;
+    border-radius:30px;
+    color:white;
+    padding:4px 18px 4px 18px;
+    
 `

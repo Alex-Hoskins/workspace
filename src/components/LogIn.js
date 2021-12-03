@@ -77,10 +77,10 @@ const PageContainer = styled.div`
     align-items:flex-start;
     flex-wrap:wrap;
     height:100vh;
+    width:100vw;
     padding-top:5px;
     margin-top:0px;
     min-height:100vh;
-    box-sizing:border-box;
 `
 
 const StyledFormContainer = styled.div`
@@ -94,14 +94,12 @@ const StyledFormContainer = styled.div`
     border-radius:30px;
     margin:0px;
     min-height:90vh; 
-    box-sizing:border-box;
-
 `
 const PageShadow = styled.div`
     display:flex;
     align-items:center;
     justify-content:center;
-    background-color:#00000036;
+    background-color:#0000001c;
     width:100%;
     height:100%;
     border-radius:30px;

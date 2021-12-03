@@ -1,6 +1,7 @@
 *{
   box-sizing:border-box;
 }
+
 main {
   align-content: center;
   box-sizing: border-box;
@@ -32,7 +33,7 @@ a:hover {
 }
 code,
 pre {
-  color: #00000036;
+  color: #0000001c;
   font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
     Bitstream Vera Sans Mono, Courier New, monospace, serif;
   font-size: 0.92em;
