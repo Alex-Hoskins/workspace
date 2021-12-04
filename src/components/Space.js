@@ -5,6 +5,7 @@ import { seeMore } from '../actions';
 
 
 const Space = (props) =>{
+    console.log('props from space', props)
     const { space } = props
 
     const letsSeeIt=()=>{

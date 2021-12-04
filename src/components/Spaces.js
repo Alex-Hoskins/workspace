@@ -10,14 +10,6 @@ const Spaces = (props) =>{
 
     const toggle=()=>{
         setIsToggled(!isToggled)
-        console.log(isToggled)
-    }
-
-    const letsSeeIt=(id)=>{
-        if(seeMore === id){
-            setSeeMore('')
-        }
-        else{setSeeMore(id)}
     }
 
     return(
