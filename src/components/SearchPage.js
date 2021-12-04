@@ -3,10 +3,14 @@ import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
-import Spaces from './Spaces'
+import Spaces from './Spaces';
+import { connect } from 'react-redux';
+import SpaceDetails from './SpaceDetails'
 
 
-const CreateAccount = (props) => {
+
+const SearchPage = (props) => {
+    const spaceDetails = props.spaceDetails
     const [workspace, setWorkspace] = useState({
         location:"",
         buildingType:"",
@@ -32,7 +36,7 @@ const CreateAccount = (props) => {
         <PageContainer>
             <StyledFormContainer>
                 <StyledForm onSubmit={submitForm}> 
-                        <h2>Advanced Search</h2>
+                        <h2>Find your <br />WorkSpace</h2>
                         <StyledInputContainer>
                             <label>Location </label>
                             <input
@@ -45,7 +49,7 @@ const CreateAccount = (props) => {
                         <StyledInputContainer>
                             <label >WorkSpace type?</label>
                                 <select name="buildingType" onChange={handleChanges}>
-                                    <option value="select" selected disabled hidden>---Select---</option>
+                                    <option defaultValue="">---Select---</option>
                                     <option value="homeOffice">Home Office</option>
                                     <option value="sharedOffice">Shared Office</option>
                                     <option value="uniqueLocation">Unique WorkSpaces</option>
@@ -55,7 +59,7 @@ const CreateAccount = (props) => {
                         <StyledInputContainer>
                             <label >How many people?</label>
                                 <select name="numberOfPeople" onChange={handleChanges}>
-                                    <option value="select" selected disabled hidden>---Select---</option>
+                                    <option defaultValue="">---Select---</option>
                                     <option value="onePerson">1</option>
                                     <option value="twoPerson">2</option>
                                     <option value="threeToSixPerson">3-6</option>
@@ -64,9 +68,9 @@ const CreateAccount = (props) => {
                                 </select>
                         </StyledInputContainer>  
                         <StyledInputContainer>
-                            <label>Choose a date</label>
+                            <label>What date?</label>
                                 <select name="date" onChange={handleChanges}>
-                                    <option value="select" selected disabled hidden>---Select---</option>
+                                    <option defaultValue="">---Select---</option>
                                     <option value="today">Today</option>
                                     <option value="tomorrow">Tomorrow</option>
                                     <option value="nextWeek">Next week</option>
@@ -74,9 +78,9 @@ const CreateAccount = (props) => {
                                 </select>
                         </StyledInputContainer>  
                         <StyledInputContainer>
-                            <label >Choose a time</label>
+                            <label >What time?</label>
                                 <select name="time" onChange={handleChanges}>                                    
-                                    <option value="select" selected disabled hidden>---Select---</option>
+                                    <option defaultValue="" >---Select---</option>
                                     <option value="12am-8am">12am-8am</option>
                                     <option value="8am-12pm">8am-12pm</option>
                                     <option value="12pm-4pm">12pm-4pm</option>
@@ -88,11 +92,19 @@ const CreateAccount = (props) => {
                 </StyledForm>
                </StyledFormContainer>
         </PageContainer>
-        <Spaces/>
+        {!spaceDetails ? <Spaces/> : <SpaceDetails space={spaceDetails}/>}
         </PageStyle>
     )
     }
-export default CreateAccount;
+
+    const mapStateToProps = (state) =>{
+        return{
+            spaces: state.spaces,
+            spaceDetails: state.spaceDetails
+        }
+    }
+export default connect(mapStateToProps)(SearchPage);
+
 const PageStyle=styled.div`
 display:flex;
 flex-direction:column;
@@ -122,7 +134,7 @@ const StyledFormContainer = styled.div`
     margin:1px;
     h2{
         text-align:center;
-        font-size:1.4rem;
+        font-size:1rem;
         margin-top:0px;
         margin-bottom:0px;
     }
@@ -171,7 +183,7 @@ const StyledForm = styled.form`
     }
     h2{
         text-align:center;
-        font-size:1.4rem;
+        font-size:1rem;
         margin-top:0px;
         margin-bottom:0px;
         margin-right:19px;

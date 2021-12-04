@@ -1,12 +1,11 @@
 import React, { useState} from 'react';
 import styled from 'styled-components';
 import Space from './Space';
-import { data } from '../data/data'
+import { data } from '../data/data';
+import { connect } from 'react-redux';
 
-const initialSpaces= data;
-
-const Spaces = () =>{
-    const[spaces, setSpaces]=useState(initialSpaces)
+const Spaces = (props) =>{
+    const spaces =props.spaces
     const [isToggled,setIsToggled]=useState(false)
 
     const toggle=()=>{
@@ -14,14 +13,22 @@ const Spaces = () =>{
         console.log(isToggled)
     }
 
+    const letsSeeIt=(id)=>{
+        if(seeMore === id){
+            setSeeMore('')
+        }
+        else{setSeeMore(id)}
+    }
+
     return(
+        
     <HomeStyle>
        <h2>See what our users have to offer!</h2>
         {isToggled && <ListStyle>
-            <LandingItem item={spaces[0]}/>
-            <LandingItem item={spaces[1]}/>
-            <LandingItem item={spaces[2]}/>
-            <LandingItem item={spaces[3]}/>
+            <Space space={spaces[0]}/>
+            <Space space={spaces[1]}/>
+            <Space space={spaces[2]}/>
+            <Space space={spaces[3]}/>
         </ListStyle>}
         {
         !isToggled &&
@@ -34,7 +41,12 @@ const Spaces = () =>{
         <button onClick={toggle}>See More</button>
     </HomeStyle>
     )}
-export default Spaces;
+    const mapStateToProps = (state) =>{
+        return{
+            spaces: state.spaces
+        }
+    }
+export default connect(mapStateToProps)(Spaces);
 
 const HomeStyle = styled.ul`
     display:flex;
