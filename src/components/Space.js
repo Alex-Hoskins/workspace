@@ -2,23 +2,21 @@ import React from 'react';
 import styled from 'styled-components';
 import { connect } from 'react-redux';
 import { seeMore } from '../actions';
+import { Link } from 'react-router-dom';
+import { useParams } from "react-router-dom";
+
 
 
 const Space = (props) =>{
-    console.log('props from space', props)
     const { space } = props
+    const {space_id} = useParams()
 
-    const letsSeeIt=()=>{
-        props.dispatch(seeMore(space))
-    }
 
     return(
-    <ItemStyle onClick={letsSeeIt}>
-        <div>
+    <ItemStyle>
             <img src={space.image} alt={space.name} />
             <p><StyledSpan>{space.name}</StyledSpan> ${space.price}/4hrs</p>
             <p>{space.location}</p>
-        </div>
     </ItemStyle>
     )}
 
@@ -29,15 +27,16 @@ const Space = (props) =>{
     }
 export default connect(mapStateToProps)(Space);
 
-const ItemStyle = styled.div`
+const ItemStyle = styled.button`
     display:flex;
     flex-direction:column;
     justify-content:center;
-    align-items:center;
+    align-items:flex-start;
     width:300px;
     height:300px;
     margin:20px;
     background-color:white;
+    border:none;
     img{
         width:300px;
         height:200px;
@@ -46,6 +45,9 @@ const ItemStyle = styled.div`
     }
     p{
         font-size:1rem;
+    }
+    &:hover{
+        cursor:pointer
     }
 `
 const StyledSpan=styled.span`

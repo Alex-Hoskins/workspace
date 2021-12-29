@@ -92,7 +92,7 @@ const SearchPage = (props) => {
                 </StyledForm>
                </StyledFormContainer>
         </PageContainer>
-        {!spaceDetails ? <Spaces/> : <SpaceDetails space={spaceDetails}/>}
+            <Spaces/>
         </PageStyle>
     )
     }

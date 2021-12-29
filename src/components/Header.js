@@ -11,7 +11,7 @@ const Header = (props) =>{
             <h1>WorkSpace</h1>
             <NavStyle>
                 <li><Link to="/">Home</Link></li>
-                <li><Link to="/search">Advanced Search</Link></li>
+                <li><Link to="/spaces">Spaces</Link></li>
                 {props.state.loggedIn ? <li><Link to="/logout"><SpanStyled>Logout</SpanStyled></Link></li> : <li><Link to="/login"><SpanStyled>Login</SpanStyled></Link></li>}   
             </NavStyle>
         </NavContainer>

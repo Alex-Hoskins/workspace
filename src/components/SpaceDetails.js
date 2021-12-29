@@ -1,16 +1,26 @@
-import React from 'react';
+import { useParams } from "react-router-dom";
+
+import React, { useEffect } from 'react';
 import styled from 'styled-components';
 import { connect } from 'react-redux';
 import { seeMore } from '../actions';
 
+
 const SpaceDetails = (props) =>{
-    console.log(props)
-    const { space } = props
-    const goBack =()=>{
-        props.dispatch(seeMore(''))
-    }
+    const params = useParams()
+  let spaces = props.spaces
+    let {space_id} =  params
+
+    let [space] = spaces.filter(s => {
+        return (  space_id == s.space_id)
+    })
+
+  console.log(space, 'this is space')
+  console.log(params, 'this is params')
+  console.log(space_id, 'this is space_id')
     return(
     <ItemStyle>
+        {!space && <h2>loading...</h2> ||
         <StyledDetails>
             <img src={space.image} alt={space.name} />
             <StyledDetails2>
@@ -19,17 +29,14 @@ const SpaceDetails = (props) =>{
                 <p><StyledSpan>Location:</StyledSpan> {space.location}</p>
                 <p><StyledSpan>Description:</StyledSpan> {space.description}</p>
                 <p><StyledSpan>WorkSpace Elite:</StyledSpan> {space.workspaceElite ? 'Yes' : 'No'}</p>
-                <ButtonContainer>
-                    <button onClick={goBack}>Back to Search</button>
-                    <StyledButton>Book this WorkSpace</StyledButton>
-                </ButtonContainer>
             </StyledDetails2>
         </StyledDetails>
+        }
     </ItemStyle>
     )}
     const mapStateToProps = (state) =>{
         return{
-            spaceDetails: state.spaceDetails
+            spaces: state.spaces
             
         }
     }
@@ -90,19 +97,6 @@ const StyledSpan=styled.span`
             text-decoration-color:none;
             cursor:text;
         }
-`
-const StyledButton=styled.div`
-    display:flex;
-    justify-content:center;
-    width:200px;
-    background-color:black;
-    border-radius:7px;
-    font-size:1.2rem;
-    height:30px;
-    color:white;
-    margin-left:20px;
-    border:none;
-
 `
 const ButtonContainer=styled.div`
     width:410px;

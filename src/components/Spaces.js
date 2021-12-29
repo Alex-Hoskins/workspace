@@ -1,43 +1,29 @@
 import React, { useState} from 'react';
 import styled from 'styled-components';
 import Space from './Space';
-import { data } from '../data/data';
 import { connect } from 'react-redux';
+import { Link} from 'react-router-dom';
 
 const Spaces = (props) =>{
     const spaces =props.spaces
-    const [isToggled,setIsToggled]=useState(false)
-
-    const toggle=()=>{
-        setIsToggled(!isToggled)
-    }
 
     return(
-        
     <HomeStyle>
        <h2>See what our users have to offer!</h2>
-        {isToggled && <ListStyle>
-            <Space space={spaces[0]}/>
-            <Space space={spaces[1]}/>
-            <Space space={spaces[2]}/>
-            <Space space={spaces[3]}/>
-        </ListStyle>}
-        {
-        !isToggled &&
         <ListStyle>
-            {spaces.map(space=>{
-            return <Space key={space.space_id} space={space}/>
+            {spaces.map((space, i)=>{
+            return <Link to={`/spaces/${space.space_id}`}><Space key={Math.random()} space={space}/></Link>
             })}
         </ListStyle>
-        }
-        <button onClick={toggle}>See More</button>
     </HomeStyle>
     )}
+
     const mapStateToProps = (state) =>{
         return{
             spaces: state.spaces
         }
     }
+
 export default connect(mapStateToProps)(Spaces);
 
 const HomeStyle = styled.ul`

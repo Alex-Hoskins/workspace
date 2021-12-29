@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import styled from 'styled-components';
 import { useNavigate } from 'react-router-dom';
+import Spaces from './Spaces';
+
 
 const LandingPage = (props) => {
     const [search, setSearch]=useState('');
@@ -31,6 +33,7 @@ const LandingPage = (props) => {
             </Search>
         </form>
     </LandingSearch>
+    <Spaces/>
     </div>
     );
 }
@@ -50,10 +53,9 @@ const LandingSearch=styled.div`
     justify-content:center;
     align-items:flex-start;
     flex-wrap:wrap;
-    height:100vh;
+    min-height:40vh;
     padding-top:5px;
     margin-top:0px;
-    min-height:100vh;
     form{
         display:flex;
         flex-direction:column;
@@ -61,9 +63,9 @@ const LandingSearch=styled.div`
         justify-content:flex-start;
         background-image:url('https://images.unsplash.com/photo-1596079890744-c1a0462d0975?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1471&q=80');
         object-fit:cover;
-        width:90%;
-        height:90%;
-        border-radius:30px;
+        background-position:center;
+        width:100%;
+        height:40vh;
         margin:0px;
         box-sizing:border-box;
     }
