@@ -10,16 +10,14 @@ const LandingPage = (props) => {
     const navigate = useNavigate();
     
     const handleChange = (e) => {
-        console.log('this is value',e.target.value)
         setSearch(
             e.target.value
         );
     }
     const handleSubmit = (e) =>{
         e.preventDefault();
-        console.log(`${search} is what we are searching for.`);
         setSearch('');
-        navigate('/search')
+        navigate('/spaces')
     }
 
     return(
