@@ -13,6 +13,7 @@ const LogIn = (props) =>{
         username:"",
         password:""
     });
+    const [message, setMessage]=useState('')
     const handleChanges = event => {
         setUser({
             ...user,
@@ -22,8 +23,14 @@ const LogIn = (props) =>{
 
     const handleSubmit = event =>{
         event.preventDefault();
-        props.dispatch(logIn());
-        navigate('/');
+        axios.post('https://workspacebackend.herokuapp.com/api/auth/login', user)
+            .then(res=>{
+                navigate('/')
+            })
+            .catch(err=>{
+                setMessage(err.response.data.message)
+            })
+        
     }
    
     return (
@@ -52,6 +59,7 @@ const LogIn = (props) =>{
                             placeholder="Enter password" />
                         </StyledInputContainer>
                         <button type="submit">Submit</button>
+                        {message && <p>{message}</p>}
                     </StyledForm>
                 </PageShadow>   
             </StyledFormContainer>

@@ -6,24 +6,33 @@ import { Link } from 'react-router-dom';
 
 
 const CreateAccount = (props) => {
+    const navigate = useNavigate();
+
     const [user, setUser] = useState({
-        firstname:"",
-        lastname:"",
+        user_first_name:"",
+        user_last_name:"",
         email:"",
         username:"",
         password:""
     });
+    const [message, setMessage] = useState('')
+
     const handleChanges = event => {
         setUser({
             ...user,
             [event.target.name]: event.target.value
         });
     };
-    const navigate = useNavigate();
+
     const submitForm = event => {
         event.preventDefault();
-        console.log('created an account');
-        navigate('/login');
+        axios.post('https://workspacebackend.herokuapp.com/api/auth/register', user)
+            .then(res=>{
+                navigate('/login')
+            })
+            .catch(err=>{
+                setMessage(err.response.data.message)
+            })
     }
 
     return (
@@ -36,19 +45,19 @@ const CreateAccount = (props) => {
                             <label>First Name </label>
                             <input
                                 type="text"
-                                name="firstname"
+                                name="user_first_name"
                                 placeholder="Enter first name"
                                 onChange={handleChanges}
-                                value={user.firstname} />
+                                value={user.user_first_name} />
                         </StyledInputContainer>
                         <StyledInputContainer>
                             <label>Last Name </label>
                             <input
                                 type="text"
-                                name="lastname"
+                                name="user_last_name"
                                 placeholder="Enter last name"
                                 onChange={handleChanges}
-                                value={user.lastname} />
+                                value={user.user_last_name} />
                         </StyledInputContainer>    
                         <StyledInputContainer>
                             <label>Email</label>
@@ -78,6 +87,7 @@ const CreateAccount = (props) => {
                                 value={user.password} />
                         </StyledInputContainer>  
                         <button>Create Account</button>
+                        {message && <p>{message}</p>}
                 </StyledForm>
                 </PageShadow>
             </StyledFormContainer>
