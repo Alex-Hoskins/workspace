@@ -62,7 +62,8 @@ const LandingSearch=styled.div`
         background-image:url('https://images.unsplash.com/photo-1596079890744-c1a0462d0975?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1471&q=80');
         object-fit:cover;
         background-position:center;
-        width:100%;
+        border-radius:10px;
+        width:90%;
         height:40vh;
         margin:0px;
         box-sizing:border-box;

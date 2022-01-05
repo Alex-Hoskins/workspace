@@ -126,7 +126,7 @@ const PageShadow = styled.div`
     display:flex;
     align-items:center;
     justify-content:center;
-    background-color:#0000001c;
+    /* background-color:#0000001c; */
     width:100%;
     height:100%;
     border-radius:30px;

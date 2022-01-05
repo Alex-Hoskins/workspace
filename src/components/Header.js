@@ -32,7 +32,7 @@ const HeaderStyle = styled.div`
     justify-content: center;
     width:100%;
     height:10%;
-    margin:0px;
+    margin:1%;
     padding:0px;
     box-sizing:border-box;
     h1{
