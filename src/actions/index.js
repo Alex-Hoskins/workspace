@@ -17,7 +17,7 @@ export const logOut = () =>{
 
 export const getWorkspaces = () =>{
     return (dispatch) => {
-        axios.get('http://localhost:9000/api/workspace')
+        axios.get('https://workspacebackend.herokuapp.com/api/workspace')
             .then(resp=> {
                 dispatch(setSpaces(resp.data))
             })
