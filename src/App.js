@@ -10,17 +10,16 @@ import LogOut from './components/LogOut';
 import SignUp from './components/SignUp';
 import SpaceDetails from './components/SpaceDetails';
 import { connect } from 'react-redux';
-import Spaces from './components/Spaces'
+import {getWorkspaces} from './actions/index'
 
 
 
 function App(props) {
-  const spaces = props.spaces
-  console.log(spaces)
 
-  if(!spaces){
-    return(loading)
-  }else{
+  useEffect(()=>{
+    props.dispatch(getWorkspaces())
+   },[]);
+  
   return (
    <div className='app'>
      <Header/>
@@ -35,7 +34,7 @@ function App(props) {
    </div>
   );
         }
-}
+
 
 const mapStateToProps = (state) =>{
   return{

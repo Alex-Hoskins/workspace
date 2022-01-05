@@ -1,10 +1,10 @@
 export const SET_SPACES = "SET_SPACES";
 export const LOG_IN = "LOG_IN";
 export const LOG_OUT = "LOG_OUT";
-export const SEE_MORE = "SEE_MORE";
+import axios from 'axios'
 
-export const setSpaces = () =>{
-    return({type: SET_SPACES})
+export const setSpaces = (spaces) =>{
+    return({type: SET_SPACES, payload: spaces})
 }
 
 export const logIn = () =>{
@@ -14,6 +14,16 @@ export const logIn = () =>{
 export const logOut = () =>{
     return({type: LOG_OUT})
 }
-export const seeMore = (space) =>{
-    return({type: SEE_MORE, payload:space})
+
+export const getWorkspaces = () =>{
+    return (dispatch) => {
+        axios.get('http://localhost:9000/api/workspace')
+            .then(resp=> {
+                dispatch(setSpaces(resp.data))
+            })
+            .catch(err => {
+                console.log(err);
+            });
+    }
 }
+

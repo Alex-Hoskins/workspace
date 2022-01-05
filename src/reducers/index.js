@@ -1,10 +1,8 @@
-import { SET_SPACES, LOG_IN, LOG_OUT, SEE_MORE } from '../actions/index';
-import { data } from '../data/data'
+import { SET_SPACES, LOG_IN, LOG_OUT} from '../actions/index';
 
 const initialState = {
-    spaces: data,
+    spaces: [],
     loggedIn: false,
-    spaceDetails: ''
 }
 
 
@@ -13,7 +11,7 @@ const reducer = (state = initialState, action) => {
         case SET_SPACES:
             return {
                 ...state,
-                spaces: []
+                spaces: action.payload
             }
         case LOG_IN:
             return {
@@ -24,11 +22,6 @@ const reducer = (state = initialState, action) => {
             return {
                 ...state,
                 loggedIn: false
-            }
-        case SEE_MORE:
-            return {
-                ...state,
-                spaceDetails:action.payload
             }
         default:
             return state;

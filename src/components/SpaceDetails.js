@@ -1,34 +1,25 @@
 import { useParams } from "react-router-dom";
-
-import React, { useEffect } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import { connect } from 'react-redux';
-import { seeMore } from '../actions';
-
 
 const SpaceDetails = (props) =>{
     const params = useParams()
   let spaces = props.spaces
     let {space_id} =  params
-
     let [space] = spaces.filter(s => {
-        return (  space_id == s.space_id)
+        return (  space_id == s.workspace_id)
     })
-
-  console.log(space, 'this is space')
-  console.log(params, 'this is params')
-  console.log(space_id, 'this is space_id')
     return(
     <ItemStyle>
         {!space && <h2>loading...</h2> ||
         <StyledDetails>
-            <img src={space.image} alt={space.name} />
+            <img src={space.image_content} alt={space.image_description} />
             <StyledDetails2>
                 <h2><StyledSpan>{space.name}</StyledSpan> </h2>
-                <p><StyledSpan>Price:</StyledSpan> ${space.price}</p> 
-                <p><StyledSpan>Location:</StyledSpan> {space.location}</p>
-                <p><StyledSpan>Description:</StyledSpan> {space.description}</p>
-                <p><StyledSpan>WorkSpace Elite:</StyledSpan> {space.workspaceElite ? 'Yes' : 'No'}</p>
+                <p><StyledSpan>Price:</StyledSpan> ${space.workspace_price}</p> 
+                <p><StyledSpan>Location:</StyledSpan> {space.workspace_location}</p>
+                <p><StyledSpan>Description:</StyledSpan> {space.workspace_description}</p>
             </StyledDetails2>
         </StyledDetails>
         }
@@ -37,7 +28,6 @@ const SpaceDetails = (props) =>{
     const mapStateToProps = (state) =>{
         return{
             spaces: state.spaces
-            
         }
     }
 export default connect(mapStateToProps)(SpaceDetails);
@@ -98,7 +88,4 @@ const StyledSpan=styled.span`
             cursor:text;
         }
 `
-const ButtonContainer=styled.div`
-    width:410px;
-    display:flex;
-`
+

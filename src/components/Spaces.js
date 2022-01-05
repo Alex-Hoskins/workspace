@@ -1,4 +1,4 @@
-import React, { useState} from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import Space from './Space';
 import { connect } from 'react-redux';
@@ -8,22 +8,21 @@ const Spaces = (props) =>{
     const spaces =props.spaces
 
     return(
+        
     <HomeStyle>
        <h2>See what our users have to offer!</h2>
         <ListStyle>
             {spaces.map((space, i)=>{
-            return <Link to={`/spaces/${space.space_id}`}><Space key={Math.random()} space={space}/></Link>
+            return <Link to={`/spaces/${space.workspace_id}`}><Space key={Math.random()} space={space}/></Link>
             })}
         </ListStyle>
     </HomeStyle>
     )}
-
     const mapStateToProps = (state) =>{
         return{
             spaces: state.spaces
         }
     }
-
 export default connect(mapStateToProps)(Spaces);
 
 const HomeStyle = styled.ul`

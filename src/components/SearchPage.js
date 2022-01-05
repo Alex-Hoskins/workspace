@@ -1,16 +1,11 @@
 import React, { useState } from "react";
-import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
-import axios from 'axios';
-import { Link } from 'react-router-dom';
 import Spaces from './Spaces';
 import { connect } from 'react-redux';
-import SpaceDetails from './SpaceDetails'
 
 
 
-const SearchPage = (props) => {
-    const spaceDetails = props.spaceDetails
+const SearchPage = () => {
     const [workspace, setWorkspace] = useState({
         location:"",
         buildingType:"",
@@ -24,11 +19,9 @@ const SearchPage = (props) => {
             ...workspace,
             [event.target.name]: event.target.value
         });
-        console.log(workspace)
     };
     const submitForm = event => {
         event.preventDefault();
-        console.log('created an account');
     }
 
     return (
@@ -100,7 +93,6 @@ const SearchPage = (props) => {
     const mapStateToProps = (state) =>{
         return{
             spaces: state.spaces,
-            spaceDetails: state.spaceDetails
         }
     }
 export default connect(mapStateToProps)(SearchPage);

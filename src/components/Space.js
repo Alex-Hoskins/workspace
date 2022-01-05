@@ -1,22 +1,15 @@
 import React from 'react';
 import styled from 'styled-components';
 import { connect } from 'react-redux';
-import { seeMore } from '../actions';
-import { Link } from 'react-router-dom';
-import { useParams } from "react-router-dom";
-
-
 
 const Space = (props) =>{
     const { space } = props
-    const {space_id} = useParams()
-
 
     return(
     <ItemStyle>
-            <img src={space.image} alt={space.name} />
-            <p><StyledSpan>{space.name}</StyledSpan> ${space.price}/4hrs</p>
-            <p>{space.location}</p>
+            <img src={space.image_content} alt={space.image_description} />
+            <p><StyledSpan>{space.workspace_name}</StyledSpan> ${space.workspace_price}/4hrs</p>
+            <p>{space.workspace_location}</p>
     </ItemStyle>
     )}
 
