@@ -21,6 +21,7 @@ const Space = (props) =>{
 export default connect(mapStateToProps)(Space);
 
 const ItemStyle = styled.button`
+    border:1px solid black;
     display:flex;
     flex-direction:column;
     justify-content:center;
@@ -30,11 +31,35 @@ const ItemStyle = styled.button`
     margin:20px;
     background-color:white;
     border:none;
+    @media (max-width: 1100px) {
+        width:400px;
+        height:400px;
+        }
+    @media (max-width: 920px) {
+        width:300px;
+        height:300px;
+        }
+    @media (max-width: 720px) {
+        width:400px;
+        height:400px;
+        }
     img{
         width:300px;
         height:200px;
         object-fit: cover;
         border-radius:10px;
+        @media (max-width: 1100px) {
+        width:400px;
+        height:300px;
+        }
+        @media (max-width: 920px) {
+        width:300px;
+        height:200px;
+        }
+        @media (max-width: 720px) {
+        width:400px;
+        height:300px;
+        }
     }
     p{
         font-size:1rem;

@@ -28,13 +28,16 @@ export default connect(mapStateToProps)(Spaces);
 const HomeStyle = styled.ul`
     display:flex;
     flex-direction:column;
-    justify-content:space-around;
     align-items:center;
-    background-size:100%;
-    margin:0;
-    box-sizing:border-box;
+    padding:0;
 `
 const ListStyle = styled.ul`
+    width:100%;
     display:flex;
     flex-wrap:wrap;
+    @media (max-width: 1438px) {
+    flex-direction: row;
+    justify-content:space-evenly;
+    width:100%
+  }
 `
