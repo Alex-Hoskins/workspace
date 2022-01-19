@@ -8,15 +8,16 @@ const Spaces = (props) =>{
     const spaces =props.spaces
 
     return(
-        
     <HomeStyle>
        <h2>See what our users have to offer!</h2>
+       {spaces.length == 0 && <h3>loading available WorkSpaces...</h3> ||
         <ListStyle>
             {spaces.map((space, i)=>{
             return <Link to={`/spaces/${space.workspace_id}`}><Space key={Math.random()} space={space}/></Link>
             })}
-        </ListStyle>
+        </ListStyle>}
     </HomeStyle>
+
     )}
     const mapStateToProps = (state) =>{
         return{
