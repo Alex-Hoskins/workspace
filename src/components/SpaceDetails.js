@@ -37,7 +37,7 @@ const ItemStyle = styled.div`
     justify-content:center;
     align-items:center;
     width:90%;
-    height:auto;
+    min-height:80vh;
     margin:20px;
     background-color:white;
     img{

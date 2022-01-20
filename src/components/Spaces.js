@@ -31,6 +31,7 @@ const HomeStyle = styled.ul`
     flex-direction:column;
     align-items:center;
     padding:0;
+    min-height:80vh;
 `
 const ListStyle = styled.ul`
     width:100%;
