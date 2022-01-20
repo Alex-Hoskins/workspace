@@ -55,6 +55,10 @@ const NavContainer=styled.div`
     justify-content:space-between;
     background-color:white;
     border:none;
+    @media (max-width: 600px) {
+    flex-direction: column;
+    align-items:center;
+  }
 `
 const NavStyle = styled.ul`
     display:flex;
@@ -65,6 +69,9 @@ const NavStyle = styled.ul`
     margin:0px;
     padding:0px;
     color:black;
+    @media (max-width: 600px) {
+    width:100%
+  }
   li {
         display: flex;
         flex-direction:row;

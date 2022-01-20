@@ -9,6 +9,7 @@ import LogIn from './components/LogIn';
 import LogOut from './components/LogOut';
 import SignUp from './components/SignUp';
 import SpaceDetails from './components/SpaceDetails';
+import Footer from './components/Footer'
 import { connect } from 'react-redux';
 import {getWorkspaces} from './actions/index'
 
@@ -31,6 +32,7 @@ function App(props) {
         <Route path="/logout" element={<LogOut/>}/>
         <Route path="/signup" element={<SignUp/>}/>
      </Routes>
+     <Footer/>
    </div>
   );
         }
