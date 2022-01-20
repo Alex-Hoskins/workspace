@@ -6,7 +6,7 @@ const Footer = () =>{
         <FooterStyle>
             <p><h3>Company</h3>The WorkSpace App</p>
             <p><h3>Location</h3>San Francisco, CA</p>
-            <a href="https://github.com/Alex-Hoskins/workspace"><p><h3>GitHub</h3>https://github.com/Alex-Hoskins/workspace5</p></a>
+            <a href="https://github.com/Alex-Hoskins/workspace" target='blank'><p><h3>GitHub</h3>https://github.com/Alex-Hoskins/workspace5</p></a>
         </FooterStyle>
         )
 }
