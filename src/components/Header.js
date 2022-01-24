@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 const Header = (props) =>{
+    console.log('props from header', props.state)
+    
     return(
     <HeaderStyle>
         <NavContainer>

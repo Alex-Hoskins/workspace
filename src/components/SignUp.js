@@ -40,7 +40,7 @@ const CreateAccount = (props) => {
             <StyledFormContainer>
                 <PageShadow>
                 <StyledForm onSubmit={submitForm}>
-                        <h2>Create Account or <Link to="/login">Login</Link></h2>         
+                        <h2>Create Account or <Link to="/login"><span>Login</span></Link></h2>         
                         <StyledInputContainer>
                             <label>First Name </label>
                             <input
@@ -167,6 +167,9 @@ const StyledForm = styled.form`
         font-size:1.4rem;
         margin-top:20px;
         margin-bottom:5px;
+    }
+    span{
+        color:teal;
     }
 `
 const StyledInputContainer=styled.div`
