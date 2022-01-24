@@ -31,6 +31,11 @@ const ItemStyle = styled.button`
     margin:20px;
     background-color:white;
     border:none;
+    p{
+        margin:0;
+        margin-top:5px;
+        
+    }
     @media (max-width: 1100px) {
         width:400px;
         height:400px;
