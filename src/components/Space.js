@@ -75,9 +75,5 @@ const ItemStyle = styled.button`
 `
 const StyledSpan=styled.span`
     font-weight:bold;
-        &:hover{
-            text-decoration:none;
-            text-decoration-color:none;
-            cursor:text;
-        }
+    color:black;
 `

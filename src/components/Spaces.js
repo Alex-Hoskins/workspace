@@ -10,13 +10,14 @@ const Spaces = (props) =>{
     return(
     <HomeStyle>
        <h2>See what our users have to offer!</h2>
-       <Link to="/addworkspace">Add your own WorkSpace <span>HERE</span>!</Link>
+       <Link to="/addworkspace">Or add your own WorkSpace to our inventory <StSpan>HERE</StSpan>!</Link>
        {spaces.length == 0 && <h3>loading available WorkSpaces...</h3> ||
         <ListStyle>
             {spaces.map((space, i)=>{
             return <Link to={`/spaces/${space.workspace_id}`}><Space key={Math.random()} space={space}/></Link>
             })}
         </ListStyle>}
+        <Link to="/addworkspace">Add your own WorkSpace to our inventory <StSpan>HERE</StSpan>!</Link>
     </HomeStyle>
 
     )}
@@ -33,8 +34,8 @@ const HomeStyle = styled.ul`
     align-items:center;
     padding:0;
     min-height:80vh;
-    span{
-        font-weight:bold;
+    h2{
+        font-size:1.6rem;
     }
 `
 const ListStyle = styled.ul`
@@ -46,4 +47,7 @@ const ListStyle = styled.ul`
     justify-content:space-evenly;
     width:100%
   }
+`
+const StSpan=styled.span`
+    color:teal;
 `
