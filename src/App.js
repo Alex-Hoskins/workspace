@@ -11,8 +11,9 @@ import SignUp from './components/SignUp';
 import SpaceDetails from './components/SpaceDetails';
 import Footer from './components/Footer'
 import { connect } from 'react-redux';
-import {getWorkspaces} from './actions/index'
+import {getWorkspaces, logOut, logIn} from './actions/index'
 import AddWorkSpace from './components/AddWorkSpace';
+import PrivateRoute from './components/PrivateRoute';
 
 
 
@@ -20,6 +21,11 @@ function App(props) {
 
   useEffect(()=>{
     props.dispatch(getWorkspaces())
+    if(localStorage.getItem('token')){
+      props.dispatch(logIn())
+    }else{
+      props.dispatch(logOut())
+    }
    },[]);
   
   return (
@@ -32,7 +38,7 @@ function App(props) {
         <Route path="/login" element={<LogIn/>}/>
         <Route path="/logout" element={<LogOut/>}/>
         <Route path="/signup" element={<SignUp/>}/>
-        <Route path="/addworkspace" element={<AddWorkSpace/>}/>
+        <Route path="/addworkspace" element={<PrivateRoute><AddWorkSpace/></PrivateRoute>}/>
      </Routes>
      <Footer/>
    </div>

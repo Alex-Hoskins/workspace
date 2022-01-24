@@ -25,6 +25,9 @@ const LogIn = (props) =>{
         event.preventDefault();
         axios.post('https://workspacebackend.herokuapp.com/api/auth/login', user)
             .then(res=>{
+                localStorage.setItem('token', res.data.token);
+                props.dispatch(logIn())
+                console.log(res.data.token);
                 navigate('/')
             })
             .catch(err=>{
@@ -38,7 +41,7 @@ const LogIn = (props) =>{
             <StyledFormContainer>
                 <PageShadow>
                     <StyledForm onSubmit={handleSubmit}>
-                        <h3>Login or <Link to="/signup">Signup</Link></h3>
+                        <h3>Login or <Link to="/signup"><span>Signup</span></Link></h3>
                         <StyledInputContainer>
                             <label>Username</label>
                             <input 
@@ -148,6 +151,9 @@ const StyledForm = styled.form`
         font-size:1.4rem;
         margin-top:20px;
         margin-bottom:5px;
+    }
+    span{
+        color:teal;
     }
 `
 const StyledInputContainer=styled.div`
