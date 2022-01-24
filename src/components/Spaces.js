@@ -10,6 +10,7 @@ const Spaces = (props) =>{
     return(
     <HomeStyle>
        <h2>See what our users have to offer!</h2>
+       <Link to="/addworkspace">Add your own WorkSpace <span>HERE</span>!</Link>
        {spaces.length == 0 && <h3>loading available WorkSpaces...</h3> ||
         <ListStyle>
             {spaces.map((space, i)=>{
@@ -32,6 +33,9 @@ const HomeStyle = styled.ul`
     align-items:center;
     padding:0;
     min-height:80vh;
+    span{
+        font-weight:bold;
+    }
 `
 const ListStyle = styled.ul`
     width:100%;

@@ -25,10 +25,10 @@ const LandingPage = (props) => {
     <LandingSearch >
         <form>
             <h2>Where will you work today?</h2>
-            <Search>
+            {/* <Search>
                 <input value={search} onChange={handleChange} name="search" type="text"  placeholder='Type location'/>
                 <button onClick={handleSubmit}>Search</button>
-            </Search>
+            </Search> */}
         </form>
     </LandingSearch>
     <Spaces/>

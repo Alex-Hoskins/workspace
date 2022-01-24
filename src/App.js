@@ -12,6 +12,7 @@ import SpaceDetails from './components/SpaceDetails';
 import Footer from './components/Footer'
 import { connect } from 'react-redux';
 import {getWorkspaces} from './actions/index'
+import AddWorkSpace from './components/AddWorkSpace';
 
 
 
@@ -31,6 +32,7 @@ function App(props) {
         <Route path="/login" element={<LogIn/>}/>
         <Route path="/logout" element={<LogOut/>}/>
         <Route path="/signup" element={<SignUp/>}/>
+        <Route path="/addworkspace" element={<AddWorkSpace/>}/>
      </Routes>
      <Footer/>
    </div>
