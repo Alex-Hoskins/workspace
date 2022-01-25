@@ -35,7 +35,7 @@ const HomeStyle = styled.ul`
     padding:0;
     min-height:80vh;
     h2{
-        font-size:1.6rem;
+        font-size:2.6rem;
     }
 `
 const ListStyle = styled.ul`
