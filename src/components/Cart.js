@@ -1,20 +1,21 @@
 import React from 'react';
 import styled from 'styled-components';
+import SpaceInCart from './SpaceInCart';
 import Space from './Space';
 import { connect } from 'react-redux';
 import { Link} from 'react-router-dom';
 
 const Spaces = (props) =>{
-    const spaces =props.spaces
+    const spaces =props.userSpaces
 
     return(
     <HomeStyle>
-       <h2>See what our users have to offer!</h2>
+       <h2>Your Saved WorkSpaces</h2>
        <Link to="/addworkspace">Or add your own WorkSpace to our inventory <StSpan>HERE</StSpan>!</Link>
-       {spaces.length == 0 && <h3>loading available WorkSpaces...</h3> ||
+       {spaces.length == 0 && <h3>Add WorkSpaces to your Cart and view them here!</h3> ||
         <ListStyle>
             {spaces.map((space, i)=>{
-            return <Link to={`/spaces/${space.workspace_id}`}><Space key={Math.random()} space={space}/></Link>
+            return <Link to={`/cart/${space.workspace_id}`}><Space key={Math.random()} space={space}/></Link>
             })}
         </ListStyle>}
         <Link to="/addworkspace">Add your own WorkSpace to our inventory <StSpan>HERE</StSpan>!</Link>
@@ -23,7 +24,7 @@ const Spaces = (props) =>{
     )}
     const mapStateToProps = (state) =>{
         return{
-            spaces: state.spaces
+            userSpaces: state.userSpaces
         }
     }
 export default connect(mapStateToProps)(Spaces);
@@ -35,7 +36,8 @@ const HomeStyle = styled.ul`
     padding:0;
     min-height:80vh;
     h2{
-        font-size:1.6rem;
+        font-size:2.6rem;
+        margin:20px;
     }
 `
 const ListStyle = styled.ul`
