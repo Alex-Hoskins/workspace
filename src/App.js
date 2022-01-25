@@ -16,6 +16,7 @@ import AddWorkSpace from './components/AddWorkSpace';
 import PrivateRoute from './components/PrivateRoute';
 import Cart from './components/Cart';
 import SpaceInCart from './components/SpaceInCart';
+import About from './components/About';
 
 
 
@@ -35,6 +36,7 @@ function App(props) {
      <Header/>
      <Routes>
         <Route path="/" element={<LandingPage/>}/>
+        <Route path="/about" element={<About/>}/>
         <Route path="/spaces" element={<SearchPage/>}/>
         <Route path="/spaces/:workspace_id" element={<SpaceDetails/>}/>
         <Route path="/login" element={<LogIn/>}/>
