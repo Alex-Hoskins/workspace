@@ -50,7 +50,7 @@ const LandingSearch=styled.div`
     width:100%;
     justify-content:center;
     flex-wrap:wrap;
-    min-height:180px;
+    min-height:110px;
     margin-top:0px;
     background-color:white;
     @media (max-width: 620px) {
@@ -64,7 +64,7 @@ const LandingSearch=styled.div`
         object-fit:cover;
         background-position:center;
         width:100%;
-        height:180px;
+        height:110px;
         box-sizing:border-box;
         @media (max-width: 620px) {
         height:230px;
@@ -100,6 +100,7 @@ const LandingSearch=styled.div`
         margin-top:0px;
         }
     }
+   
 `
 const Search=styled.div`
     display:flex;

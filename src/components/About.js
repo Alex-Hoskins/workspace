@@ -37,7 +37,8 @@ const AboutStyle = styled.ul`
     width:50%;
     h2{
         font-size:2.6rem;
-        margin:20px;
+        margin:0px;
+        margin-top:15px;
     }
     p{
         font-size:1.8rem;

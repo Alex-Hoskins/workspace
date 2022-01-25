@@ -9,7 +9,7 @@ const Spaces = (props) =>{
 
     return(
     <HomeStyle>
-       <h2>See what our users have to offer!</h2>
+        <h2>See what our users have to offer!</h2>
        <Link to="/addworkspace">Or add your own WorkSpace to our inventory <StSpan>HERE</StSpan>!</Link>
        {spaces.length == 0 && <h3>loading available WorkSpaces...</h3> ||
         <ListStyle>
