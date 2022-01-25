@@ -4,8 +4,7 @@ import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 const Header = (props) =>{
-    console.log('props from header', props.state)
-    
+    let userSpaces = props.userSpaces
     return(
     <HeaderStyle>
         <NavContainer>
@@ -13,6 +12,7 @@ const Header = (props) =>{
             <NavStyle>
                 <li><Link to="/">Home</Link></li>
                 <li><Link to="/spaces">Spaces</Link></li>
+                {userSpaces.length > 0 && <li><Link to="/cart">Cart({userSpaces.length})</Link></li>}
                 {props.state.loggedIn ? <li><Link to="/logout"><SpanStyled>Logout</SpanStyled></Link></li> : <li><Link to="/login"><SpanStyled>Login</SpanStyled></Link></li>}   
             </NavStyle>
         </NavContainer>
@@ -20,7 +20,8 @@ const Header = (props) =>{
 }
 const mapStateToProps = (state) =>{
     return{
-        state: state
+        state: state,
+        userSpaces: state.userSpaces
 
     }
    

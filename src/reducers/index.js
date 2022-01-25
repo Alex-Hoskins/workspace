@@ -1,8 +1,9 @@
-import { SET_SPACES, LOG_IN, LOG_OUT} from '../actions/index';
+import { SET_SPACES, LOG_IN, LOG_OUT, ADD_USER_SPACE} from '../actions/index';
 
 const initialState = {
     spaces: [],
     loggedIn: false,
+    userSpaces: []
 }
 
 
@@ -22,6 +23,13 @@ const reducer = (state = initialState, action) => {
             return {
                 ...state,
                 loggedIn: false
+            }
+        case ADD_USER_SPACE:
+            console.log('hello form reducer', action.payload)
+
+            return {
+                ...state,
+                userSpaces: [...state.userSpaces, action.payload]
             }
         default:
             return state;

@@ -14,6 +14,8 @@ import { connect } from 'react-redux';
 import {getWorkspaces, logOut, logIn} from './actions/index'
 import AddWorkSpace from './components/AddWorkSpace';
 import PrivateRoute from './components/PrivateRoute';
+import Cart from './components/Cart';
+import SpaceInCart from './components/SpaceInCart';
 
 
 
@@ -34,10 +36,12 @@ function App(props) {
      <Routes>
         <Route path="/" element={<LandingPage/>}/>
         <Route path="/spaces" element={<SearchPage/>}/>
-        <Route path="/spaces/:space_id" element={<SpaceDetails/>}/>
+        <Route path="/spaces/:workspace_id" element={<SpaceDetails/>}/>
         <Route path="/login" element={<LogIn/>}/>
         <Route path="/logout" element={<LogOut/>}/>
         <Route path="/signup" element={<SignUp/>}/>
+        <Route path="/cart" element={<Cart/>}/>
+        <Route path="/cart/:workspace_id" element={<SpaceInCart/>}/>
         <Route path="/addworkspace" element={<PrivateRoute><AddWorkSpace/></PrivateRoute>}/>
      </Routes>
      <Footer/>

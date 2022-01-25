@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import { connect } from 'react-redux';
 import { add_user_space } from "../actions";
 
-const SpaceDetails = (props) =>{
+const SpaceInCart = (props) =>{
     const params = useParams()
     let spaces = props.spaces
     console.log('hello from userSpaces', props.userSpaces)
@@ -14,20 +14,9 @@ const SpaceDetails = (props) =>{
         return (  workspace_id == s.workspace_id)
     })
 
-    const addToCart=()=>{
-        let inCart=false
-        if(userSpaces){
-            for(let x of userSpaces){
-                if(x.workspace_name == space.workspace_name){
-                    inCart=true
-                }
-            }
-        }
+    const bookSpace=()=>{
         
-        if(!inCart){
-            props.dispatch(add_user_space(space)) 
-        }
-        console.log(userSpaces)
+        console.log('Book WorkSpaces coming soon!')
         
     }
     return(
@@ -40,7 +29,8 @@ const SpaceDetails = (props) =>{
                 <p><StyledSpan>Price:</StyledSpan> ${space.workspace_price}</p> 
                 <p><StyledSpan>Location:</StyledSpan> {space.workspace_location}</p>
                 <p><StyledSpan>Description:</StyledSpan> {space.workspace_description}</p>
-                <button onClick={addToCart}>Add To Cart </button>
+                <button onClick={bookSpace}><LineSpan>Book </LineSpan> (coming soon)</button>
+                <p>Booking WorkSpaces coming soon!</p>
             </StyledDetails2>
         </StyledDetails>
         }
@@ -52,7 +42,7 @@ const SpaceDetails = (props) =>{
             userSpaces:state.userSpaces
         }
     }
-export default connect(mapStateToProps)(SpaceDetails);
+export default connect(mapStateToProps)(SpaceInCart);
 
 const ItemStyle = styled.div`
     display:flex;
@@ -100,6 +90,7 @@ const StyledDetails2 =styled.div`
         color:white;
         border:none;
         margin-top:30px;
+        font-size:1rem;
     }
 `
 
@@ -111,4 +102,6 @@ const StyledSpan=styled.span`
             cursor:text;
         }
 `
-
+const LineSpan=styled.span`
+    text-decoration:line-through;
+`
