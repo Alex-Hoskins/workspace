@@ -102,6 +102,11 @@ display:flex;
 flex-direction:column;
 justify-content:space-around;
 min-height:100vh;
+h2{
+        font-size:2.6rem;
+        text-align:center;
+        margin-top:15px;
+    }
 `
 const PageContainer = styled.div`
     display:flex;
