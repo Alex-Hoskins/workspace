@@ -11,14 +11,13 @@ const Spaces = (props) =>{
     return(
     <HomeStyle>
        <h2>Your Saved WorkSpaces</h2>
-       <Link to="/addworkspace">Or add your own WorkSpace to our inventory <StSpan>HERE</StSpan>!</Link>
-       {spaces.length == 0 && <h3>Add WorkSpaces to your Cart and view them here!</h3> ||
+       {spaces.length == 0 && <h3>Your cart is empty. Add WorkSpaces to your Cart.</h3> ||
         <ListStyle>
             {spaces.map((space, i)=>{
             return <Link to={`/cart/${space.workspace_id}`}><Space key={Math.random()} space={space}/></Link>
             })}
         </ListStyle>}
-        <Link to="/addworkspace">Add your own WorkSpace to our inventory <StSpan>HERE</StSpan>!</Link>
+        <Link to="/addworkspace">Or add your own WorkSpace to our inventory <StSpan>HERE</StSpan>!</Link>
     </HomeStyle>
 
     )}
