@@ -12,7 +12,7 @@ const Header = (props) =>{
             <NavStyle>
                 <li><Link to="/">Home</Link></li>
                 <li><Link to="/spaces">Spaces</Link></li>
-                {userSpaces.length > 0 && <li><Link to="/cart">Cart({userSpaces.length})</Link></li>}
+               <li><Link to="/cart">Cart({userSpaces.length})</Link></li>
                 {props.state.loggedIn ? <li><Link to="/logout"><SpanStyled>Logout</SpanStyled></Link></li> : <li><Link to="/login"><SpanStyled>Login</SpanStyled></Link></li>}   
             </NavStyle>
         </NavContainer>
