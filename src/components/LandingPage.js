@@ -23,13 +23,8 @@ const LandingPage = (props) => {
     return(
     <div>
     <LandingSearch >
-        <form>
             <h2>Where will you work today<StyleSpan>?</StyleSpan></h2>
-            {/* <Search>
-                <input value={search} onChange={handleChange} name="search" type="text"  placeholder='Type location'/>
-                <button onClick={handleSubmit}>Search</button>
-            </Search> */}
-        </form>
+            <img src="https://images.unsplash.com/photo-1497032628192-86f99bcd76bc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" alt="Deskspace" />
     </LandingSearch>
     <Spaces/>
     </div>
@@ -47,12 +42,30 @@ export default connect(mapStateToProps)(LandingPage);
 
 const LandingSearch=styled.div`
     display:flex;
-    width:100%;
+    width:90%;
     justify-content:center;
     flex-wrap:wrap;
     min-height:110px;
     margin-top:0px;
     background-color:white;
+    display:flex;
+    justify-content:space-around;
+    align-items:center;
+    @media (max-width: 1000px) {
+        flex-direction:column;
+    }
+    img{
+        width:40%;
+        object-fit:cover;
+        padding:0;
+        margin:0;
+        height:400px;
+        border-radius:20px;
+        @media (max-width: 1000px) {
+        width:90%
+    }
+    }
+
     @media (max-width: 620px) {
         min-height:230px;
     }
@@ -85,14 +98,23 @@ const LandingSearch=styled.div`
         color:rgba(0, 0, 0, 0.9);
         font-size:6rem;
         text-align:center;
-        width:98%;
+        width:40%;
         height:95%;
         display:flex;
         align-items:center;
         justify-content:center;
         border-radius:10px;
-        @media (max-width: 700px) {
-        font-size:5rem;
+        padding:0;
+        margin:0;
+        @media (max-width: 1300px) {
+            font-size:5rem;
+        }
+        @media (max-width: 1100px) {
+            font-size:5rem;
+        }
+        @media (max-width: 1000px) {
+        font-size:4rem;
+        width:90%;
         margin-top:0px;
         }
         @media (max-width: 600px) {
@@ -123,4 +145,5 @@ const Search=styled.div`
 `
 const StyleSpan=styled.span`
     color:teal;
+    font-size:230%
 `
