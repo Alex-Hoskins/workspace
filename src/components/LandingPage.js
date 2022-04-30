@@ -41,7 +41,7 @@ export default connect(mapStateToProps)(LandingPage);
 
 const LandingSearch=styled.div`
     display:flex;
-    width:100%;
+    width:100vw;
     justify-content:center;
     flex-wrap:wrap;
     min-height:110px;
