@@ -24,7 +24,6 @@ const LandingPage = (props) => {
     <div>
     <LandingSearch >
             <h2>Where will you work today<StyleSpan>?</StyleSpan></h2>
-            <img src="https://images.unsplash.com/photo-1497032628192-86f99bcd76bc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" alt="Deskspace" />
     </LandingSearch>
     <Spaces/>
     </div>
@@ -42,14 +41,16 @@ export default connect(mapStateToProps)(LandingPage);
 
 const LandingSearch=styled.div`
     display:flex;
-    width:90%;
+    width:100%;
     justify-content:center;
     flex-wrap:wrap;
     min-height:110px;
     margin-top:0px;
-    background-color:white;
+    /* background-color:white; */
+    background-image:url('https://images.unsplash.com/photo-1497032628192-86f99bcd76bc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80');
+    /* background-position:center; */
     display:flex;
-    justify-content:space-around;
+    justify-content:center;
     align-items:center;
     @media (max-width: 1000px) {
         flex-direction:column;
@@ -95,19 +96,20 @@ const LandingSearch=styled.div`
         font-size:1.2rem;
     }
     h2{
-        color:rgba(0, 0, 0, 0.9);
-        font-size:6rem;
+        color:white;
+        font-size:2rem;
         text-align:center;
-        width:40%;
-        height:95%;
+        width:300px;
+        height:200px;
         display:flex;
         align-items:center;
         justify-content:center;
         border-radius:10px;
-        padding:0;
-        margin:0;
-        @media (max-width: 1300px) {
-            font-size:5rem;
+        padding:10px;
+        margin:50px;
+        background-color:hsl(0, 5%, .5%, 15%);
+        /* @media (max-width: 1300px) {
+            font-size:3rem;
         }
         @media (max-width: 1100px) {
             font-size:5rem;
@@ -120,7 +122,7 @@ const LandingSearch=styled.div`
         @media (max-width: 600px) {
         font-size:3rem;
         margin-top:0px;
-        }
+        } */
     }
    
 `
