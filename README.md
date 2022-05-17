@@ -1,10 +1,12 @@
 # WorkSpace
 
-This directory is a web application called WorkSpace. The purpose is to connect remote workers with flexible workspaces. The functionality strives to make flexible work even more enjoyable and productive. The application is deployed using Vercel and it connects to the WorkSpaceBackend repository. You can view them by clicking the links below.
+This directory is a web application called WorkSpace where remote workers can connect with flexible workspaces. Flexible work is in high demand and this application strives to bring more options, allowing workers to have an office close to home but without all the distractions. WorkSpace strives to make remote work even better! 
+
+The application is deployed using Vercel and it connects to the WorkSpaceBackend repository. You can view them by clicking the links below.
 
 #### Link to project: https://workspace-zeta.vercel.app/
 #### Link to backend repository: https://github.com/Alex-Hoskins/WorkSpaceBackEnd
-
+<br/>
 <a href='https://workspace-zeta.vercel.app/' target='_blank'><img src='https://lh3.googleusercontent.com/JLyLl0gMfixeVgTzWgQvLsQGQHtUiRIWeoYXx71Lra9zoaLWBL-tLuI08ICiXNfB11GtY2ImLXXPWM_3Pj94izeVnKgqUiSxNsDZHDU_65y5ZjAQBZBl7zgQZiBfLvx4_JNm40qNsg=w600' alt='WorkSpace'/></a>
 
 ## How It's Made:
@@ -23,4 +25,8 @@ I utilized react in order to make large, reusable components. I started creating
 **2)** Due to the large amounts of components, it was tricky making sure all of the routing was correct. I wanted to make sure when you clicked on a WorkSpace, or any specific component, that the route corresponed correctly. This allows the forward and back arrows to work correctly when you are navigating the history on the browser. 
 
 ## Examples:
+Take a look at these couple examples that I have in my own portfolio:
 
+**African Marketplace:** https://vercel.com/alex-hoskins/african-marketplace
+
+**Portfolio:** https://alexrhoskins.com/
