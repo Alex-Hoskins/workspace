@@ -1,6 +1,6 @@
 # WorkSpace
 
-This directory is a web application called WorkSpace. The purpose is to connect remote workers with flexible workspaces. The application is deployed using Vercel and it connects to the WorkSpaceBackend repository. You can view them by clicking the links below.
+This directory is a web application called WorkSpace. The purpose is to connect remote workers with flexible workspaces. The functionality strives to make flexible work even more enjoyable and productive. The application is deployed using Vercel and it connects to the WorkSpaceBackend repository. You can view them by clicking the links below.
 
 #### Link to project: https://workspace-zeta.vercel.app/
 #### Link to backend repository: https://github.com/Alex-Hoskins/WorkSpaceBackEnd
@@ -14,11 +14,12 @@ The application was created with React and the API connects to the WorkSpaceBack
 
 ## Optimizations: 
 
-I utilized react in order to make large, reusable components.
+I utilized react in order to make large, reusable components. I started creating a filter so that users could more easily navigate to a workspace that fits their needs. I want to expand on this filter and optimize beyond MVP.
 
 ## Lessons Learned:  
 
 **1)** There is a lot of boilerplate code when using redux. Every time you wanted to create a new action you had to touch three files in order to get the action to work. This seems repetitive and not very DRY. Next time I will explore context API a bit more but Redux got the job done in this project.
+
 **2)** Due to the large amounts of components, it was tricky making sure all of the routing was correct. I wanted to make sure when you clicked on a WorkSpace, or any specific component, that the route corresponed correctly. This allows the forward and back arrows to work correctly when you are navigating the history on the browser. 
 
 ## Examples:
