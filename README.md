@@ -9,11 +9,17 @@ This directory is a web application called WorkSpace. The purpose is to connect 
 
 ## How It's Made:
 **Tech used:** HTML, CSS, JavaScript, React, Redux, Redux-thunk
+
 The application was created with React and the API connects to the WorkSpaceBackEnd directory. Redux was utilized for advanced state management, complete with a store in the index.js and an actions file. React-thunk was utilized so that the actions could be more dynamic and have a broader use. We installed axios and used it to make CRUD requests.
 
 ## Optimizations: 
 
+I utilized react in order to make large, reusable components.
+
 ## Lessons Learned:  
+
+**1)** There is a lot of boilerplate code when using redux. Every time you wanted to create a new action you had to touch three files in order to get the action to work. This seems repetitive and not very DRY. Next time I will explore context API a bit more but Redux got the job done in this project.
+**2)** Due to the large amounts of components, it was tricky making sure all of the routing was correct. I wanted to make sure when you clicked on a WorkSpace, or any specific component, that the route corresponed correctly. This allows the forward and back arrows to work correctly when you are navigating the history on the browser. 
 
 ## Examples:
 
