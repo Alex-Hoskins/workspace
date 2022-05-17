@@ -5,4 +5,11 @@ This directory is a web application called WorkSpace. The purpose is to connect 
 #### Link to project: https://workspace-zeta.vercel.app/
 #### Link to backend repository:
 
+## How It's Made:
+
+## Optimizations: 
+
+## Lessons Learned:  
+
+## Examples:
 
