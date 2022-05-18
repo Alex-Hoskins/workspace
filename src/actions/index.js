@@ -2,6 +2,7 @@ export const SET_SPACES = "SET_SPACES";
 export const LOG_IN = "LOG_IN";
 export const LOG_OUT = "LOG_OUT";
 export const ADD_USER_SPACE = "ADD_USER_SPACE";
+export const FILTER_SPACES = "FILTER_SPACES"
 
 import axios from 'axios'
 
@@ -20,6 +21,10 @@ export const logIn = () =>{
 
 export const logOut = () =>{
     return({type: LOG_OUT})
+}
+
+export const filter_spaces = (price) =>{
+    return({type: FILTER_SPACES, payload: price})
 }
 
 export const getWorkspaces = () =>{

@@ -1,6 +1,6 @@
 import React from 'react';
-import { useEffect, useState } from 'react';
-import {Routes, Route, useParams } from "react-router-dom";
+import { useEffect } from 'react';
+import {Routes, Route } from "react-router-dom";
 import './App.css';
 import LandingPage from './components/LandingPage';
 import SearchPage from './components/SearchPage';

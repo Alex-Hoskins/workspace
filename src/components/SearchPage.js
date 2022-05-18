@@ -7,11 +7,7 @@ import { connect } from 'react-redux';
 
 const SearchPage = () => {
     const [workspace, setWorkspace] = useState({
-        location:"",
-        buildingType:"",
-        numberOfPeople:"",
-        date:"",
-        time:""
+        price:''
     });
     
     const handleChanges = event => {
@@ -22,6 +18,7 @@ const SearchPage = () => {
     };
     const submitForm = event => {
         event.preventDefault();
+        console.log(workspace.buildingType)
     }
 
     return (
@@ -31,54 +28,13 @@ const SearchPage = () => {
                 <StyledForm onSubmit={submitForm}> 
                         <h2>Find your <br />WorkSpace</h2>
                         <StyledInputContainer>
-                            <label>Location </label>
-                            <input
-                                type="text"
-                                name="location"
-                                placeholder="Enter location"
-                                onChange={handleChanges}
-                                value={workspace.location} />
-                        </StyledInputContainer>
-                        <StyledInputContainer>
-                            <label >WorkSpace type?</label>
-                                <select name="buildingType" onChange={handleChanges}>
-                                    <option defaultValue="">---Select---</option>
-                                    <option value="homeOffice">Home Office</option>
-                                    <option value="sharedOffice">Shared Office</option>
-                                    <option value="uniqueLocation">Unique WorkSpaces</option>
-                                    <option value="Entire Office">Entire Office</option>
-                                </select>
-                        </StyledInputContainer>  
-                        <StyledInputContainer>
-                            <label >How many people?</label>
-                                <select name="numberOfPeople" onChange={handleChanges}>
-                                    <option defaultValue="">---Select---</option>
-                                    <option value="onePerson">1</option>
-                                    <option value="twoPerson">2</option>
-                                    <option value="threeToSixPerson">3-6</option>
-                                    <option value="sixPlusPerson">7+</option>
-                                    <option value="twentyPlusPerson">20+</option>
-                                </select>
-                        </StyledInputContainer>  
-                        <StyledInputContainer>
-                            <label>What date?</label>
-                                <select name="date" onChange={handleChanges}>
-                                    <option defaultValue="">---Select---</option>
-                                    <option value="today">Today</option>
-                                    <option value="tomorrow">Tomorrow</option>
-                                    <option value="nextWeek">Next week</option>
-                                    <option value="nextMonth">Next</option>
-                                </select>
-                        </StyledInputContainer>  
-                        <StyledInputContainer>
-                            <label >What time?</label>
-                                <select name="time" onChange={handleChanges}>                                    
-                                    <option defaultValue="" >---Select---</option>
-                                    <option value="12am-8am">12am-8am</option>
-                                    <option value="8am-12pm">8am-12pm</option>
-                                    <option value="12pm-4pm">12pm-4pm</option>
-                                    <option value="4pm-8pm">4pm-8pm</option>
-                                    <option value="8pm-11:59pm">8pm-11:59pm</option>
+                            <label >Max Price:</label>
+                                <select name="price" onChange={handleChanges}>
+                                    <option defaultValue="">---No Max---</option>
+                                    <option value="25">$25</option>
+                                    <option value="50">$50</option>
+                                    <option value="75">$75</option>
+                                    <option value="150">$150</option>
                                 </select>
                         </StyledInputContainer>  
                         <button>Search</button>
@@ -124,7 +80,7 @@ const StyledFormContainer = styled.div`
     flex-direction:column;
     justify-content:center;
     align-items:center;
-    width:90%;
+    width:45%;
     border:1px solid grey;
     border-radius:7px;
     box-sizing:border-box;
@@ -143,7 +99,7 @@ const StyledForm = styled.form`
     justify-content:space-evenly;
     flex-wrap:wrap;
     align-items:center;
-    width:95%;
+    width:90%;
     background-color:white;
     box-sizing:border-box;
     input{

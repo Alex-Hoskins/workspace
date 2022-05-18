@@ -6,6 +6,7 @@ import { Link} from 'react-router-dom';
 
 const Spaces = (props) =>{
     const spaces =props.spaces
+    console.log(spaces)
 
     return(
     <HomeStyle>
