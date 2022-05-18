@@ -1,12 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import Space from './Space';
 import { connect } from 'react-redux';
 import { Link} from 'react-router-dom';
 
 const Spaces = (props) =>{
-    const spaces =props.spaces
-    console.log(spaces)
+    let spaces = props.filterSpaces
 
     return(
     <HomeStyle>
@@ -23,7 +22,8 @@ const Spaces = (props) =>{
     )}
     const mapStateToProps = (state) =>{
         return{
-            spaces: state.spaces
+            spaces: state.spaces,
+            filterSpaces:state.filterSpaces
         }
     }
 export default connect(mapStateToProps)(Spaces);

@@ -13,7 +13,11 @@ const SpaceDetails = (props) =>{
     let [space] = spaces.filter(s => {
         return (  workspace_id == s.workspace_id)
     })
-
+    if(space){
+        let emailName = space.workspace_name.split(' ')
+        emailName=emailName.join('')
+        space.email=emailName+`@workspace.com`
+        } 
     const addToCart=()=>{
         let inCart=false
         if(userSpaces){
@@ -40,6 +44,7 @@ const SpaceDetails = (props) =>{
                 <p><StyledSpan>Price:</StyledSpan> ${space.workspace_price}</p> 
                 <p><StyledSpan>Location:</StyledSpan> {space.workspace_location}</p>
                 <p><StyledSpan>Description:</StyledSpan> {space.workspace_description}</p>
+                {space.email && <p><StyledSpan>Email:</StyledSpan> {space.email}</p>}
                 <button onClick={addToCart}>Add To Cart </button>
             </StyledDetails2>
         </StyledDetails>

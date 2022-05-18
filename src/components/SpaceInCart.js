@@ -7,17 +7,19 @@ import { add_user_space } from "../actions";
 const SpaceInCart = (props) =>{
     const params = useParams()
     let spaces = props.spaces
-    console.log('hello from userSpaces', props.userSpaces)
-    let userSpaces= props.userSpaces
     let {workspace_id} =  params
     let [space] = spaces.filter(s => {
         return (  workspace_id == s.workspace_id)
     })
+    if(space){
+    let emailName = space.workspace_name.split(' ')
+    emailName=emailName.join('')
+    space.email=emailName+`@workspace.com`
+    } 
+   
 
     const bookSpace=()=>{
-        
         console.log('Book WorkSpaces coming soon!')
-        
     }
     return(
     <ItemStyle>
@@ -25,12 +27,13 @@ const SpaceInCart = (props) =>{
         <StyledDetails>
             <img src={space.image_content} alt={space.image_description} />
             <StyledDetails2>
-                <h2><StyledSpan>{space.name}</StyledSpan> </h2>
+                <h2><StyledSpan>{space.workspace_name}</StyledSpan> </h2>
                 <p><StyledSpan>Price:</StyledSpan> ${space.workspace_price}</p> 
                 <p><StyledSpan>Location:</StyledSpan> {space.workspace_location}</p>
                 <p><StyledSpan>Description:</StyledSpan> {space.workspace_description}</p>
-                <button onClick={bookSpace}><LineSpan>Book </LineSpan> (coming soon)</button>
-                <p>Booking WorkSpaces coming soon!</p>
+                {space.email && <p>Contact <StyledSpan>{space.email}</StyledSpan> to book!</p>}
+                {/* <button onClick={bookSpace}><LineSpan>Book </LineSpan> (coming soon)</button>
+                <p>Booking WorkSpaces coming soon!</p> */}
             </StyledDetails2>
         </StyledDetails>
         }

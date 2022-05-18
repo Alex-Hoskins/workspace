@@ -3,7 +3,8 @@ import { SET_SPACES, LOG_IN, LOG_OUT, ADD_USER_SPACE, FILTER_SPACES} from '../ac
 const initialState = {
     spaces: [],
     loggedIn: false,
-    userSpaces: []
+    userSpaces: [],
+    filterSpaces: []
 }
 
 
@@ -12,12 +13,19 @@ const reducer = (state = initialState, action) => {
         case SET_SPACES:
             return {
                 ...state,
-                spaces: action.payload
+                spaces: action.payload,
+                filterSpaces: action.payload
             }
         case FILTER_SPACES:
+                let new_filtered_spaces = []
+                state.spaces.map(s=>{
+                    if(s.workspace_price<=action.payload){
+                        new_filtered_spaces.push(s)
+                    }
+                })
                 return {
                     ...state,
-                    spaces: action.payload
+                    filterSpaces: new_filtered_spaces
                 }
         case LOG_IN:
             return {

@@ -42,7 +42,7 @@ function App(props) {
         <Route path="/login" element={<LogIn/>}/>
         <Route path="/logout" element={<LogOut/>}/>
         <Route path="/signup" element={<SignUp/>}/>
-        <Route path="/cart" element={<Cart/>}/>
+        <Route path="/cart" element={<PrivateRoute><Cart/></PrivateRoute>}/>
         <Route path="/cart/:workspace_id" element={<SpaceInCart/>}/>
         <Route path="/addworkspace" element={<PrivateRoute><AddWorkSpace/></PrivateRoute>}/>
      </Routes>

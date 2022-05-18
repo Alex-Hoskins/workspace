@@ -27,7 +27,6 @@ const LogIn = (props) =>{
             .then(res=>{
                 localStorage.setItem('token', res.data.token);
                 props.dispatch(logIn())
-                console.log(res.data.token);
                 navigate('/')
             })
             .catch(err=>{

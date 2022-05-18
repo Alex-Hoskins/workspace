@@ -2,10 +2,11 @@ import React, { useState } from "react";
 import styled from 'styled-components';
 import Spaces from './Spaces';
 import { connect } from 'react-redux';
+import { filter_spaces, getWorkspaces, setSpaces } from "../actions";
 
 
 
-const SearchPage = () => {
+const SearchPage = (props) => {
     const [workspace, setWorkspace] = useState({
         price:''
     });
@@ -18,7 +19,11 @@ const SearchPage = () => {
     };
     const submitForm = event => {
         event.preventDefault();
-        console.log(workspace.buildingType)
+        props.dispatch(filter_spaces(workspace.price))
+    }
+    const reset = (e)=>{
+        e.preventDefault();
+        props.dispatch(getWorkspaces())
     }
 
     return (
@@ -38,6 +43,7 @@ const SearchPage = () => {
                                 </select>
                         </StyledInputContainer>  
                         <button>Search</button>
+                        <button onClick={reset}>Reset</button>
                 </StyledForm>
                </StyledFormContainer>
         </PageContainer>
@@ -49,6 +55,7 @@ const SearchPage = () => {
     const mapStateToProps = (state) =>{
         return{
             spaces: state.spaces,
+            filterSpaces:state.filterSpaces
         }
     }
 export default connect(mapStateToProps)(SearchPage);
