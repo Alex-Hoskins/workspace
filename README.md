@@ -1,21 +1,32 @@
-![React Logo](https://github.com/vercel/vercel/blob/master/packages/frameworks/logos/react.svg)
+# WorkSpace
 
-# React Example
+This directory is a web application called WorkSpace where remote workers can connect with flexible workspaces. Flexible work is in high demand and this application strives to bring more options, allowing workers to have an office close to home but without all the distractions. WorkSpace strives to make remote work even better! 
 
-This directory is a brief example of a [React](https://reactjs.org/) app with [Serverless Functions](https://vercel.com/docs/v2/serverless-functions/introduction) that can be deployed with Vercel and zero configuration.
+The application is deployed using Vercel and it connects to the WorkSpaceBackend repository. You can view them by clicking the links below.
 
-## Deploy Your Own
+#### Link to project: https://workspace-zeta.vercel.app/
+#### Link to backend repository: https://github.com/Alex-Hoskins/WorkSpaceBackEnd
+<br/>
+<a href='https://workspace-zeta.vercel.app/' target='_blank'><img src='https://lh3.googleusercontent.com/JLyLl0gMfixeVgTzWgQvLsQGQHtUiRIWeoYXx71Lra9zoaLWBL-tLuI08ICiXNfB11GtY2ImLXXPWM_3Pj94izeVnKgqUiSxNsDZHDU_65y5ZjAQBZBl7zgQZiBfLvx4_JNm40qNsg=w600' alt='WorkSpace'/></a>
 
-Deploy your own React project, along with Serverless Functions, with Vercel.
+## How It's Made:
+**Tech used:** HTML, CSS, JavaScript, React, Redux, Redux-thunk
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/vercel/vercel/tree/main/examples/create-react-app-functions&template=create-react-app)
+The application was created with React and the API connects to the WorkSpaceBackEnd directory. Redux was utilized for advanced state management, complete with a store in the index.js and an actions file. React-thunk was utilized so that the actions could be more dynamic and have a broader use. We installed axios and used it to make CRUD requests.
 
-_Live Example: https://create-react-app.now-examples.now.sh/_
+## Optimizations: 
 
-### How We Created This Example
+I utilized react in order to make large, reusable components. I started creating a filter so that users could more easily navigate to a workspace that fits their needs. I want to expand on this filter and optimize beyond MVP.
 
-To get started with React, along with [Serverless Functions](https://vercel.com/docs/v2/serverless-functions/introduction), with Vercel, you can use the [Create-React-App CLI](https://reactjs.org/docs/create-a-new-react-app.html#create-react-app) to initialize the project:
+## Lessons Learned:  
 
-```shell
-$ npx create-react-app my-app
-```
+**1)** There is a lot of boilerplate code when using redux. Every time you wanted to create a new action you had to touch three files in order to get the action to work. This seems repetitive and not very DRY. Next time I will explore context API a bit more but Redux got the job done in this project.
+
+**2)** Due to the large amounts of components, it was tricky making sure all of the routing was correct. I wanted to make sure when you clicked on a WorkSpace, or any specific component, that the route corresponed correctly. This allows the forward and back arrows to work correctly when you are navigating the history on the browser. 
+
+## Examples:
+Take a look at these couple examples that I have in my own portfolio:
+
+**African Marketplace:** https://vercel.com/alex-hoskins/african-marketplace
+
+**Portfolio:** https://alexrhoskins.com/
