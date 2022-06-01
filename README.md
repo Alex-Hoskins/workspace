@@ -30,3 +30,11 @@ Take a look at these couple examples that I have in my own portfolio:
 **African Marketplace:** https://vercel.com/alex-hoskins/african-marketplace
 
 **Portfolio:** https://alexrhoskins.com/
+
+## Directions:
+
+**1)** Fork and clone this repository.
+
+**2)** Run *npm install* to get all modules that are listed on package. json file and their dependencies. 
+
+**3)** Run *npm run dev* in terminal to view the application locally.
