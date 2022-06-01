@@ -53,8 +53,9 @@ const LandingSearch=styled.div`
     display:flex;
     justify-content:center;
     align-items:center;
-    @media (max-width: 1000px) {
+    @media (max-width: 900px) {
         flex-direction:column;
+        min-height:400px;
     }
 
     @media (max-width: 620px) {
@@ -73,23 +74,23 @@ const LandingSearch=styled.div`
         border-radius:10px;
         padding:10px;
         margin:0px;
-        
         background-color:hsl(0, 5%, .5%, 60%);
-        /* @media (max-width: 1300px) {
-            font-size:3rem;
-        }
-        @media (max-width: 1100px) {
+        @media (max-width: 1500px) {
             font-size:5rem;
         }
-        @media (max-width: 1000px) {
-        font-size:4rem;
-        width:90%;
+        @media (max-width: 1100px) {
+            font-size:4rem;
+        }
+        @media (max-width: 900px) {
+        font-size:3rem;
         margin-top:0px;
+        height:400px;
         }
         @media (max-width: 600px) {
         font-size:3rem;
         margin-top:0px;
-        } */
+        height:230px
+        } 
     }
    
 `
