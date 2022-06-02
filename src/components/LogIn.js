@@ -126,7 +126,7 @@ const StyledForm = styled.form`
     justify-content:center;
     align-items:center;
     width:380px;
-    height:380px;
+    min-height:400px;
     border-radius:10px;
     background-color:white;
     input{
