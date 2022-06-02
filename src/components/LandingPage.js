@@ -71,7 +71,6 @@ const LandingSearch=styled.div`
         display:flex;
         align-items:center;
         justify-content:center;
-        border-radius:10px;
         padding:10px;
         margin:0px;
         background-color:hsl(0, 5%, .5%, 60%);

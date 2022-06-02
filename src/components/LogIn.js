@@ -40,7 +40,7 @@ const LogIn = (props) =>{
             <StyledFormContainer>
                 <PageShadow>
                     <StyledForm onSubmit={handleSubmit}>
-                        <h3>Login or <Link to="/signup"><span>Signup</span></Link></h3>
+                        <h2>Login or <Link to="/signup"><span>Signup</span></Link></h2>
                         <StyledInputContainer>
                             <label>Username</label>
                             <input 
@@ -97,11 +97,13 @@ const StyledFormContainer = styled.div`
      display:flex;
     align-items:center;
     justify-content:center;
-    background-image:url('https://images.unsplash.com/photo-1596079890744-c1a0462d0975?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1471&q=80');
-    object-fit:cover;
-    width:90%;
+    background-image:url('https://images.unsplash.com/photo-1487446929682-f62f73984006?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2071&q=80');
+    background-position:center;
+    background-repeat:no-repeat;
+    background-size:cover;
+    width:100%;
     height:90%;
-    border-radius:30px;
+    // border-radius:30px;
     margin:0px;
     min-height:90vh; 
 `
@@ -109,10 +111,10 @@ const PageShadow = styled.div`
     display:flex;
     align-items:center;
     justify-content:center;
-    /* background-color:#0000001c; */
+    background-color:hsl(0, 5%, .5%, 60%);    
     width:100%;
     height:100%;
-    border-radius:30px;
+    // border-radius:30px;
     margin:0px;
     padding:0px;
     box-sizing:border-box;  
@@ -124,6 +126,7 @@ const StyledForm = styled.form`
     justify-content:center;
     align-items:center;
     width:380px;
+    height:380px;
     border-radius:10px;
     background-color:white;
     input{
