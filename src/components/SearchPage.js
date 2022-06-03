@@ -35,7 +35,7 @@ const SearchPage = (props) => {
                         <StyledInputContainer>
                             <label >Max Price:</label>
                                 <select name="price" onChange={handleChanges}>
-                                    <option defaultValue="">---No Max---</option>
+                                    <option value="100000">---No Max---</option>
                                     <option value="25">$25</option>
                                     <option value="50">$50</option>
                                     <option value="75">$75</option>
