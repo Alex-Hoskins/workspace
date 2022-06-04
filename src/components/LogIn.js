@@ -89,7 +89,7 @@ const PageContainer = styled.div`
     height:100vh;
     width:100vw;
     padding-top:5px;
-    margin-top:0px;
+    margin:0px;
     min-height:100vh;
 `
 
@@ -105,7 +105,7 @@ const StyledFormContainer = styled.div`
     height:90%;
     // border-radius:30px;
     margin:0px;
-    min-height:90vh; 
+    min-height:100vh; 
 `
 const PageShadow = styled.div`
     display:flex;
