@@ -16,8 +16,8 @@ display:flex;
 justify-content:space-around;
 align-items:flex-end;
 min-height:7vh;
-background:#00000008;;
-color:gray;
+background-color:hsl(0, 5%, .5%, 97%);
+color:white;
 border-top:1px solid gray;
 @media (max-width: 675px) {
     flex-direction:column;
@@ -26,10 +26,13 @@ border-top:1px solid gray;
     justify-content:center;
     font-size:1rem;
   }
-    a{
-        color:gray;
-        text-decoration:none;
-    }
+a{
+    color:white;
+    text-decoration:none;
+}
+h3{
+    color:teal;
+}
 `
 
 
