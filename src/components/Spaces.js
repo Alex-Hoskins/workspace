@@ -35,7 +35,7 @@ const HomeStyle = styled.ul`
     padding:0px;
     margin:0px;
     min-height:80vh;
-    width:100%;
+    width:auto;
     h2{
         font-size:2.6rem;
         text-align:center;
@@ -43,16 +43,25 @@ const HomeStyle = styled.ul`
     }
 `
 const ListStyle = styled.ul`
+    display: grid;
     width:100%;
-    display:flex;
-    flex-wrap:wrap;
-    justify-content:flex-start;
-    margin:0px;
-    padding:0px;
+    grid-template-columns: minmax(25%, max-content)
+    repeat(auto-fill, 25%) 25%;
+    justify-content: space-evenly;
+    justify-items: center;
+    align-content: space-evenly;
+    align-items: center;
+    position:center;
     @media (max-width: 1438px) {
-    flex-direction: row;
-    width:100%;
-  }
+        grid-template-columns: minmax(33%, max-content)
+        repeat(auto-fill, 33%) 33%;
+    };
+    @media (max-width: 1000px) {
+        grid-template-columns: 50% 50%;
+    };
+    @media (max-width: 700px) {
+        grid-template-columns: 100%;
+    };
 `
 const StSpan=styled.span`
     color:teal;

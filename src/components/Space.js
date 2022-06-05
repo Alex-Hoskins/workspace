@@ -28,43 +28,26 @@ const ItemStyle = styled.button`
     align-items:flex-start;
     width:300px;
     height:300px;
-    margin:10px;
     padding:0px;
     background-color:white;
+    @media (max-width: 700px) {
+        width:400px;
+        height:400px;
+    };
     p{
         margin:0px;
         margin-top:5px;
         
     }
-    @media (max-width: 1100px) {
-        width:400px;
-        height:400px;
-        }
-    @media (max-width: 920px) {
-        width:280px;
-        height:300px;
-        }
-    @media (max-width: 720px) {
-        width:380px;
-        height:400px;
-        }
     img{
         width:300px;
         height:200px;
         object-fit: cover;
         border-radius:10px;
-        @media (max-width: 1100px) {
-        width:400px;
-        height:300px;
-        }
-        @media (max-width: 920px) {
-        width:280px;
-        height:200px;
-        }
-        @media (max-width: 720px) {
-        width:380px;
-        height:300px;
-        }
+        @media (max-width: 700px) {
+            width:380px;
+            height:300px
+        };
     }
     p{
         font-size:1rem;
