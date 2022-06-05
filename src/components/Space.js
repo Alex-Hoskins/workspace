@@ -21,15 +21,16 @@ const Space = (props) =>{
 export default connect(mapStateToProps)(Space);
 
 const ItemStyle = styled.button`
-    border:none;
     display:flex;
     flex-direction:column;
     justify-content:center;
     align-items:flex-start;
     width:300px;
     height:300px;
-    padding:0px;
-    background-color:white;
+    padding:5px;
+    margin:10px;
+    background-color:rgb(245,245,245);
+    border:none;
     @media (max-width: 700px) {
         width:400px;
         height:400px;
@@ -40,7 +41,7 @@ const ItemStyle = styled.button`
         
     }
     img{
-        width:300px;
+        width:280px;
         height:200px;
         object-fit: cover;
         border-radius:10px;
