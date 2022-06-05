@@ -32,8 +32,10 @@ const HomeStyle = styled.ul`
     display:flex;
     flex-direction:column;
     align-items:center;
-    padding:0;
+    padding:0px;
+    margin:0px;
     min-height:80vh;
+    width:100%;
     h2{
         font-size:2.6rem;
         text-align:center;
@@ -44,10 +46,12 @@ const ListStyle = styled.ul`
     width:100%;
     display:flex;
     flex-wrap:wrap;
+    justify-content:flex-start;
+    margin:0px;
+    padding:0px;
     @media (max-width: 1438px) {
     flex-direction: row;
-    justify-content:space-evenly;
-    width:100%
+    width:100%;
   }
 `
 const StSpan=styled.span`
