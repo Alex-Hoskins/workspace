@@ -145,11 +145,21 @@ const StyledForm = styled.form`
     min-height:400px;
     border-radius:10px;
     background-color:white;
+    @media (max-width: 700px) {
+        width:100vw;
+        height:100vh;
+        border-radius:0px;
+        opacity:85%;
+     };
     input{
         width:300px;
         height:30px;
         font-size:1.2rem;
         border-radius:7px;
+        @media (max-width: 700px) {
+            width:85vw;
+            height:50px;
+         };
     }
     button{
         width:300px;
