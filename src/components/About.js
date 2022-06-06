@@ -36,7 +36,7 @@ const AboutStyle = styled.ul`
     padding:0;
     min-height:80vh;
     width:50%;
-    @media (max-width: 700px) {
+    @media (max-width: 800px) {
         width:90%;
     };
     h2{
