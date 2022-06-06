@@ -72,6 +72,10 @@ const ItemStyle = styled.div`
         height:500px;
         object-fit: cover;
         border-radius:10px;
+        @media (max-width: 900px) {
+            width:100%;
+            height:400px;
+          }
     }
     p{
         font-size:1.2rem;
@@ -83,6 +87,9 @@ const ItemStyle = styled.div`
 const StyledDetails =styled.div`
     display:flex;
     padding:2%;
+    @media (max-width: 900px) {
+        flex-direction:column;
+      }
 
 
 `
@@ -106,6 +113,11 @@ const StyledDetails2 =styled.div`
         border:none;
         margin-top:30px;
     }
+    @media (max-width: 900px) {
+        height:auto;
+        margin:0px;
+        padding:0px;
+      }
 `
 
 const StyledSpan=styled.span`
