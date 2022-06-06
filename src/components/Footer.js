@@ -19,7 +19,7 @@ min-height:7vh;
 background-color:hsl(0, 5%, .5%, 97%);
 color:white;
 border-top:1px solid gray;
-@media (max-width: 675px) {
+@media (max-width: 700px) {
     flex-direction:column;
     align-items:center;
     text-align:center;
@@ -29,9 +29,15 @@ border-top:1px solid gray;
 a{
     color:white;
     text-decoration:none;
+    @media (max-width: 700px) {
+        margin:0px;
+      }
 }
 h3{
     color:teal;
+    @media (max-width: 700px) {
+        margin:0px;
+      }
 }
 `
 

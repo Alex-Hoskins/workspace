@@ -27,6 +27,7 @@ export default connect(mapStateToProps)(About);
 const AboutFormat = styled.div`
     display:flex;
     justify-content:center;
+    
 `
 const AboutStyle = styled.ul`
     display:flex;
@@ -35,6 +36,9 @@ const AboutStyle = styled.ul`
     padding:0;
     min-height:80vh;
     width:50%;
+    @media (max-width: 700px) {
+        width:90%;
+    };
     h2{
         font-size:2.6rem;
         margin:0px;

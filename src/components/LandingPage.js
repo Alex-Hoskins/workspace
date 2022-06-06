@@ -53,13 +53,13 @@ const LandingSearch=styled.div`
     display:flex;
     justify-content:center;
     align-items:center;
-    @media (max-width: 900px) {
+    @media (max-width: 975px) {
         flex-direction:column;
         min-height:400px;
     }
 
-    @media (max-width: 620px) {
-        min-height:230px;
+    @media (max-width: 700px) {
+        min-height:300px;
     }
     
     h2{
@@ -80,15 +80,15 @@ const LandingSearch=styled.div`
         @media (max-width: 1100px) {
             font-size:4rem;
         }
-        @media (max-width: 900px) {
+        @media (max-width: 975px) {
         font-size:3rem;
         margin-top:0px;
         height:400px;
         }
-        @media (max-width: 600px) {
+        @media (max-width: 700px) {
         font-size:3rem;
         margin-top:0px;
-        height:230px
+        height:300px
         } 
     }
    

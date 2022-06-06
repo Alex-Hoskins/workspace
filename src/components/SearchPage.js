@@ -65,6 +65,7 @@ display:flex;
 flex-direction:column;
 justify-content:space-around;
 min-height:100vh;
+background-color:rgb(245,245,245);
 h2{
         font-size:2.6rem;
         text-align:center;
@@ -92,6 +93,9 @@ const StyledFormContainer = styled.div`
     border-radius:7px;
     box-sizing:border-box;
     margin:1px;
+    @media (max-width: 700px) {
+        width:100%;
+    };
     h2{
         text-align:center;
         font-size:1rem;
@@ -106,9 +110,10 @@ const StyledForm = styled.form`
     justify-content:space-evenly;
     flex-wrap:wrap;
     align-items:center;
-    width:90%;
+    width:100%;
     background-color:white;
     box-sizing:border-box;
+    border-radius:7px;
     input{
         width:200px;
         height:30px;

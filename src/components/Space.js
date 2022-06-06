@@ -29,11 +29,13 @@ const ItemStyle = styled.button`
     height:300px;
     padding:5px;
     margin:10px;
-    background-color:rgb(245,245,245);
+    background-color:white;
     border:none;
     @media (max-width: 700px) {
-        width:400px;
         height:400px;
+        width: 100vw;
+        margin:0px;
+        margin-top:15px;
     };
     p{
         margin:0px;
@@ -46,12 +48,14 @@ const ItemStyle = styled.button`
         object-fit: cover;
         border-radius:10px;
         @media (max-width: 700px) {
-            width:380px;
-            height:300px
+            height:300px;
+            width: 100vw;
+            border-radius:0px;
         };
     }
     p{
         font-size:1rem;
+        padding-left:15px;
     }
     &:hover{
         cursor:pointer

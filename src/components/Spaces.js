@@ -36,6 +36,7 @@ const HomeStyle = styled.ul`
     margin:0px;
     min-height:80vh;
     width:auto;
+    background-color:rgb(245,245,245);
     h2{
         font-size:2.6rem;
         text-align:center;
@@ -45,22 +46,27 @@ const HomeStyle = styled.ul`
 const ListStyle = styled.ul`
     display: grid;
     width:100%;
-    grid-template-columns: minmax(25%, max-content)
-    repeat(auto-fill, 25%) 25%;
+    grid-template-columns: minmax(20%, max-content)
+    repeat(auto-fill, 20%) 20%;
     justify-content: space-evenly;
     justify-items: center;
     align-content: space-evenly;
     align-items: center;
     position:center;
-    @media (max-width: 1438px) {
+    @media (max-width: 1600px) {
+        grid-template-columns: minmax(25%, max-content)
+        repeat(auto-fill, 25%) 25%;
+    };
+    @media (max-width: 1300px) {
         grid-template-columns: minmax(33%, max-content)
         repeat(auto-fill, 33%) 33%;
     };
-    @media (max-width: 1000px) {
+    @media (max-width: 975px) {
         grid-template-columns: 50% 50%;
     };
     @media (max-width: 700px) {
         grid-template-columns: 100%;
+        padding:0px;
     };
 `
 const StSpan=styled.span`
