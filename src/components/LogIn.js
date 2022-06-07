@@ -102,7 +102,6 @@ const StyledFormContainer = styled.div`
     background-size:cover;
     width:100%;
     height:90%;
-    // border-radius:30px;
     margin:0px;
     min-height:100vh; 
 `
@@ -113,7 +112,6 @@ const PageShadow = styled.div`
     background-color:hsl(0, 5%, .5%, 60%);    
     width:100%;
     min-height:100vh;
-    // border-radius:30px;
     margin:0px;
     padding:0px;
     box-sizing:border-box;  
@@ -134,7 +132,6 @@ const StyledForm = styled.form`
         border-radius:0px;
         opacity:85%;
         justify-content:flex-start;
-
      };
     input{
         width:300px;

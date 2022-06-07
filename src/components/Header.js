@@ -47,6 +47,9 @@ const HeaderStyle = styled.div`
         margin:0px;
         text-align:center;
         font-weight:300;
+        @media (max-width: 700px) {
+            font-size:4rem;
+          }
     }
 
     p {
@@ -75,7 +78,9 @@ const NavStyle = styled.ul`
     padding:0px;
     color:black;
     @media (max-width: 700px) {
-    width:100%
+    width:100%;
+    flex-direction:column;
+    height:auto;
   }
   li {
         display: flex;
@@ -83,7 +88,14 @@ const NavStyle = styled.ul`
         padding: 0;
         color:black;
         margin-bottom:0;
-        
+        @media (max-width: 700px) {
+            width:100%;
+            justify-content:center;
+            height:auto;
+            font-size:1.5rem;
+            margin:5px;
+            background-color:rgb(245,245,245);
+        }
         a {
             text-decoration: none;
             color: black;
@@ -106,5 +118,13 @@ const SpanStyled = styled.span`
     border-radius:30px;
     color:white;
     padding:4px 18px 4px 18px;
-    
+    @media (max-width: 700px) {
+        justify-content:center;
+        height:auto;
+        margin:5px;            
+        background-color:rgb(245,245,245);
+        color:teal;
+        border-radius:0px;
+        padding:0px;
+      }
 `
