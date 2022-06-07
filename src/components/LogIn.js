@@ -86,9 +86,8 @@ const PageContainer = styled.div`
     justify-content:center;
     align-items:flex-start;
     flex-wrap:wrap;
-    height:100vh;
+    min-height:100vh;
     width:100vw;
-    padding-top:5px;
     margin:0px;
     min-height:100vh;
 `
@@ -113,7 +112,7 @@ const PageShadow = styled.div`
     justify-content:center;
     background-color:hsl(0, 5%, .5%, 60%);    
     width:100%;
-    height:100%;
+    min-height:100vh;
     // border-radius:30px;
     margin:0px;
     padding:0px;
@@ -131,9 +130,11 @@ const StyledForm = styled.form`
     background-color:white;
     @media (max-width: 700px) {
         width:100vw;
-        height:100vh;
+        min-height:100vh;
         border-radius:0px;
         opacity:85%;
+        justify-content:flex-start;
+
      };
     input{
         width:300px;
@@ -153,6 +154,10 @@ const StyledForm = styled.form`
         height:30px;
         color:white;
         margin:20px;
+        @media (max-width: 700px) {
+            width:85vw;
+            height:50px;
+         };
     }
     label{
         font-size:.8rem;

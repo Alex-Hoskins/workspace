@@ -36,14 +36,15 @@ const HeaderStyle = styled.div`
     justify-content: center;
     width:100%;
     height:10%;
-    margin:1%;
-    padding:0px;
+    margin:0px;
+    padding:1%;
     box-sizing:border-box;
+    border-bottom:1px solid gray;
     h1{
         background-color:white;
         width:300px;
         font-size:2.4rem;
-        margin:0;
+        margin:0px;
         text-align:center;
         font-weight:300;
     }

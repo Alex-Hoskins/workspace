@@ -93,8 +93,18 @@ const StyledFormContainer = styled.div`
     border-radius:7px;
     box-sizing:border-box;
     margin:1px;
+    @media(max-width: 1200px){
+        width:60%;
+    }
+    @media(max-width: 900px){
+        width:75%;
+    }
     @media (max-width: 700px) {
         width:100%;
+        border-radius:0px;
+        border:none;
+        border-top:1px solid lightgrey;
+        border-bottom:1px solid lightgrey;
     };
     h2{
         text-align:center;
@@ -114,22 +124,46 @@ const StyledForm = styled.form`
     background-color:white;
     box-sizing:border-box;
     border-radius:7px;
+    @media (max-width: 700px) {
+        width:100vw;
+        border-radius:0px;
+        opacity:85%;
+        justify-content:space-around;
+        flex-direction:column;
+        align-items:center;
+        padding:10px;
+       
+     };
     input{
         width:200px;
         height:30px;
         font-size:1.2rem;
         color:black;
+        @media (max-width: 700px) {
+            width:85vw;
+            height:50px;
+         };
     }
     option{
         width:200px;
         height:30px;
         font-size:1.2rem;
+        @media (max-width: 700px) {
+            width:85vw;
+            height:50px;
+         };
     }
     select{
         width:130px;
         height:30px;
         font-size:1.2rem;
         color:black;
+        border-radius:7px;
+        @media (max-width: 700px) {
+            width:85vw;
+            height:50px;
+            margin:0px;
+         };
     }
 
     button{
@@ -141,6 +175,11 @@ const StyledForm = styled.form`
         color:white;
         margin-left:20px;
         border:none;
+        @media (max-width: 700px) {
+            width:85vw;
+            height:50px;
+            margin:10px;
+         };
     }
     label{
         font-size:.8rem;
@@ -152,6 +191,12 @@ const StyledForm = styled.form`
         margin-top:0px;
         margin-bottom:0px;
         margin-right:19px;
+        @media (max-width: 700px) {
+            width:85vw;
+            height:50px;
+            margin:10px;
+            font-size:1.2rem;
+         };
     }
 `
 const StyledInputContainer=styled.div`
