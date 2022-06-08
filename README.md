@@ -24,6 +24,8 @@ I utilized react in order to make large, reusable components. I started creating
 
 **2)** Due to the large amounts of components, it was tricky making sure all of the routing was correct. I wanted to make sure when you clicked on a WorkSpace, or any specific component, that the route corresponed correctly. This allows the forward and back arrows to work correctly when you are navigating the history on the browser. 
 
+**3)** There are so many intricate details when designing an application for responsiveness. I enjoyed spending significant time checking the application on a variety of screen sizes. Little tweeks here and there made the application pop on all devices.
+
 ## Examples:
 Take a look at these couple examples that I have in my own portfolio:
 
@@ -35,6 +37,6 @@ Take a look at these couple examples that I have in my own portfolio:
 
 **1)** Fork and clone this repository.
 
-**2)** Run *npm install* to get all modules that are listed on package. json file and their dependencies. 
+**2)** Run *npm install* to get all modules that are listed on package.json file and their dependencies. 
 
 **3)** Run *npm run dev* in terminal to view the application locally.
