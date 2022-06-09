@@ -10,7 +10,7 @@ The application is deployed using Vercel and it connects to the WorkSpaceBackend
 <a href='https://workspace-zeta.vercel.app/' target='_blank'><img src='https://lh3.googleusercontent.com/JLyLl0gMfixeVgTzWgQvLsQGQHtUiRIWeoYXx71Lra9zoaLWBL-tLuI08ICiXNfB11GtY2ImLXXPWM_3Pj94izeVnKgqUiSxNsDZHDU_65y5ZjAQBZBl7zgQZiBfLvx4_JNm40qNsg=w600' alt='WorkSpace'/></a>
 
 ## How It's Made:
-**Tech used:** HTML, CSS, JavaScript, React, Redux, Redux-thunk
+**Tech used:** HTML, CSS, JavaScript, React, Redux, Redux-thunk, Styled-components
 
 The application was created with React and the API connects to the WorkSpaceBackEnd directory. Redux was utilized for advanced state management, complete with a store in the index.js and an actions file. React-thunk was utilized so that the actions could be more dynamic and have a broader use. We installed axios and used it to make CRUD requests.
 
