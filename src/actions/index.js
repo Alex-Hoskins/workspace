@@ -11,7 +11,7 @@ export const setSpaces = (spaces) =>{
 }
 
 export const add_user_space = (space) =>{
-    console.log('hello form action')
+
     return({type: ADD_USER_SPACE, payload: space})
 }
 
