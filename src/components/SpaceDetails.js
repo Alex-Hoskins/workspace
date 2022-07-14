@@ -40,7 +40,7 @@ const SpaceDetails = (props) =>{
         <StyledDetails>
             <img src={space.image_content} alt={space.image_description} />
             <StyledDetails2>
-                <h2><StyledSpan>{space.name}</StyledSpan> </h2>
+                <h2><StyledSpan>{space.workspace_name}</StyledSpan> </h2>
                 <p><StyledSpan>Price:</StyledSpan> ${space.workspace_price}</p> 
                 <p><StyledSpan>Location:</StyledSpan> {space.workspace_location}</p>
                 <p><StyledSpan>Description:</StyledSpan> {space.workspace_description}</p>
